@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotte World - Guide for Visitors</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins (Body) & Fredoka (Headers) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* 헤더와 섹션 제목에 귀여운 폰트 적용 */
+        .font-header {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* 로딩 오버레이 스타일 */
+        .loading-overlay {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+        }
+        /* 기본 드롭다운 화살표 숨기기 */
+        select {
+           -webkit-appearance: none;
+           -moz-appearance: none;
+           appearance: none;
+        }
+        /* 카드 호버 애니메이션 */
+        .bouncy-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bouncy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- 로딩 오버레이 -->
+    <div id="loadingOverlay" class="fixed inset-0 z-50 items-center justify-center hidden loading-overlay">
+        <div class="text-center">
+            <svg class="animate-spin h-10 w-10 text-purple-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p id="loadingText" class="mt-4 text-lg font-semibold text-gray-700 font-header" data-translate-key="loading_text">Translating...</p>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- 메인 콘텐츠 뷰 (초기 화면) -->
+        <div id="main-view">
+            <!-- Header Section -->
+            <header class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-header font-bold text-gray-800" data-translate-key="header_title">Lotte World Visitor's Guide</h1>
+                <p class="text-lg text-gray-600 mt-3" data-translate-key="header_subtitle">Find the best food, shops, and seasonal items!</p>
+                
+                <!-- Language Selector -->
+                <div class="inline-block relative mt-8">
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                    <select id="languageSelector" class="bg-white border-2 border-gray-300 text-gray-700 font-semibold py-3 pl-5 pr-10 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-400 transition">
+                        <option value="en">English</option>
+                        <option value="ko">한국어 (Korean)</option>
+                        <option value="ja">日本語 (Japanese)</option>
+                        <option value="zh">中文 (Chinese)</option>
+                    </select>
+                </div>
+            </header>
+
+            <!-- Food & Restaurants Section -->
+            <section id="food" class="mb-16">
+                <h2 class="text-4xl font-header font-bold mb-8 text-red-600 border-b-4 border-red-200 pb-3" data-translate-key="section_food_title">Food & Restaurants</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bouncy-card category-card cursor-pointer" data-category="korean-asian">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-red-500 text-white"><h3 class="text-2xl font-header" data-translate-key="food_cat_korean_title">Korean & Asian</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="food_cat_korean_desc">Traditional flavors and popular Asian dishes.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-category="western">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-blue-500 text-white"><h3 class="text-2xl font-header" data-translate-key="food_cat_western_title">Western</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="food_cat_western_desc">Pasta, pizza, and hearty American-style dining.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-category="snack">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-yellow-500 text-white"><h3 class="text-2xl font-header" data-translate-key="food_cat_snack_title">Snack</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="food_cat_snack_desc">Churros, popcorn, and other quick, fun bites.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-category="cafe">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-green-500 text-white"><h3 class="text-2xl font-header" data-translate-key="food_cat_cafe_title">Cafe</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="food_cat_cafe_desc">Coffee, tea, and sweet desserts for a relaxing break.</p></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gift & Merchandise Section -->
+            <section id="shops" class="mb-16">
+                 <h2 class="text-4xl font-header font-bold mb-8 text-indigo-600 border-b-4 border-indigo-200 pb-3" data-translate-key="section_shop_title">Gift & Merchandise</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-6 text-center"><h3 class="text-2xl font-header text-indigo-600" data-translate-key="shop_1_name">Castle Cartoon</h3><p class="mt-2 text-gray-600" data-translate-key="shop_1_desc">Get a caricature portrait drawn!</p></div>
+                    <div class="bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-6 text-center"><h3 class="text-2xl font-header text-indigo-600" data-translate-key="shop_2_name">Lotty's Toy Shop</h3><p class="mt-2 text-gray-600" data-translate-key="shop_2_desc">The biggest toy and character shop.</p></div>
+                    <div class="bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-6 text-center"><h3 class="text-2xl font-header text-indigo-600" data-translate-key="shop_3_name">Fantasy Gift Shop</h3><p class="mt-2 text-gray-600" data-translate-key="shop_3_desc">Apparel, stationery and more.</p></div>
+                </div>
+            </section>
+
+            <!-- Seasonal Specials Section -->
+            <section id="seasonal">
+                 <h2 class="text-4xl font-header font-bold mb-8 text-pink-600 border-b-4 border-pink-200 pb-3" data-translate-key="section_seasonal_title">Seasonal Specials</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <div class="bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-6 text-center"><h3 class="text-2xl font-header text-pink-600" data-translate-key="seasonal_1_name">Halloween Items</h3><p class="mt-2 text-gray-600" data-translate-key="seasonal_1_desc">Spooky snacks and cute monster dolls (Sep-Oct).</p></div>
+                     <div class="bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-6 text-center"><h3 class="text-2xl font-header text-pink-600" data-translate-key="seasonal_2_name">Christmas Items</h3><p class="mt-2 text-gray-600" data-translate-key="seasonal_2_desc">Santa Lotty plushies and holiday treats (Nov-Dec).</p></div>
+                     <div class="bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-6 text-center"><h3 class="text-2xl font-header text-pink-600" data-translate-key="seasonal_3_name">Spring Items</h3><p class="mt-2 text-gray-600" data-translate-key="seasonal_3_desc">Cherry blossom themed drinks and gifts (Mar-Apr).</p></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 식당 목록 뷰 (초기에는 숨겨짐) -->
+        <div id="restaurant-list-view" class="hidden">
+            <div id="list-header" class="mb-8"></div>
+            <div id="list-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center p-8 mt-12 bg-gray-800 text-white">
+        <p class="font-semibold" data-translate-key="footer_rights">&copy; 2024 Lotte World. All Rights Reserved.</p>
+        <p class="text-sm text-gray-400 mt-1" data-translate-key="footer_enjoy">Enjoy your magical day at Lotte World!</p>
+    </footer>
+
+<script>
+// ===================================================================
+// 페이지 네비게이션 및 데이터 관리
+// ===================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const mainView = document.getElementById('main-view');
+    const restaurantListView = document.getElementById('restaurant-list-view');
+    const listHeader = document.getElementById('list-header');
+    const listGrid = document.getElementById('list-grid');
+
+    // ==================================================================
+    // [업장 정보 수정/추가]
+    // 이 곳에서 레스토랑 정보를 관리합니다.
+    // 제공해주신 엑셀 파일의 내용을 여기에 정확하게 반영했습니다.
+    // ==================================================================
+    const restaurantData = {
+        'korean-asian': {
+            titleKey: "food_cat_korean_title",
+            list: [
+                // [템플릿] 새 'Korean & Asian' 레스토랑 추가 시 아래 형식을 복사하여 붙여넣고, 맨 아래 originalTexts 객체에도 텍스트 정보를 추가해주세요.
+                // { nameKey: 'store_새이름', locationKey: 'loc_새위치', menuKey: 'menu_새메뉴', remarksKey: 'remark_새참고' 또는 null, url: 'https://...' },
+                { nameKey: 'store_schoolfood', locationKey: 'loc_adv1f', menuKey: 'menu_schoolfood', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=680' },
+                { nameKey: 'store_aliceshouse', locationKey: 'loc_adv2f', menuKey: 'menu_aliceshouse', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=585' },
+                { nameKey: 'store_kimpira', locationKey: 'loc_adv2f', menuKey: 'menu_kimpira', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=584' },
+                { nameKey: 'store_shanghai', locationKey: 'loc_adv2f', menuKey: 'menu_shanghai', remarksKey: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=243' },
+                { nameKey: 'store_bodolmiyeok', locationKey: 'loc_adv3f_korean', menuKey: 'menu_bodolmiyeok', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=684' },
+                { nameKey: 'store_jumak', locationKey: 'loc_adv3f_korean', menuKey: 'menu_jumak', remarksKey: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=211' },
+                { nameKey: 'store_mongchon', locationKey: 'loc_adv3f_korean', menuKey: 'menu_mongchon', remarksKey: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=612' },
+                { nameKey: 'store_bobaebanjum', locationKey: 'loc_advb3f_ice', menuKey: 'menu_bobaebanjum', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=656' },
+                { nameKey: 'store_jejukatsu', locationKey: 'loc_advb3f_ice', menuKey: 'menu_jejukatsu', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=666' },
+                { nameKey: 'store_lakefood', locationKey: 'loc_mi', menuKey: 'menu_lakefood', remarksKey: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=230' },
+                { nameKey: 'store_alltokk', locationKey: 'loc_outside1f', menuKey: 'menu_alltokk', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=632' },
+                { nameKey: 'store_dkore', locationKey: 'loc_outsideb1', menuKey: 'menu_dkore', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=637' },
+                { nameKey: 'store_goobok', locationKey: 'loc_outsideb1', menuKey: 'menu_goobok', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=665' },
+                { nameKey: 'store_jejuojeonbok', locationKey: 'loc_outsideb1', menuKey: 'menu_jejuojeonbok', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=690' },
+                { nameKey: 'store_jinjihan', locationKey: 'loc_outsideb1', menuKey: 'menu_jinjihan', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=658' },
+                { nameKey: 'store_mara', locationKey: 'loc_outsideb1', menuKey: 'menu_mara', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=566' },
+                { nameKey: 'store_milbit', locationKey: 'loc_outsideb1', menuKey: 'menu_milbit', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=670' },
+                { nameKey: 'store_onigiri', locationKey: 'loc_outsideb1', menuKey: 'menu_onigiri', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=704' },
+                { nameKey: 'store_phothin', locationKey: 'loc_outsideb1', menuKey: 'menu_phothin', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=638' },
+                { nameKey: 'store_youngdabang', locationKey: 'loc_outsideb1', menuKey: 'menu_youngdabang', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=639' },
+                { nameKey: 'store_youve', locationKey: 'loc_underlandb1', menuKey: 'menu_youve', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=608' },
+            ]
+        },
+        'western': {
+            titleKey: "food_cat_western_title",
+            list: [
+                { nameKey: 'store_aquaplaza', locationKey: 'loc_adv1f', menuKey: 'menu_aquaplaza', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=650' },
+                { nameKey: 'store_cafedazur', locationKey: 'loc_adv1f', menuKey: 'menu_cafedazur', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=649' },
+                { nameKey: 'store_crystalpalace', locationKey: 'loc_adv1f', menuKey: 'menu_crystalpalace', remarksKey: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=253' },
+                { nameKey: 'store_delkys', locationKey: 'loc_adv2f', menuKey: 'menu_delkys', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=590' },
+                { nameKey: 'store_lapaloma', locationKey: 'loc_adv2f', menuKey: 'menu_lapaloma', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=581' },
+                { nameKey: 'store_quiznos', locationKey: 'loc_adv2f', menuKey: 'menu_quiznos', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=586' },
+                { nameKey: 'store_mtable', locationKey: 'loc_adv3f', menuKey: 'menu_mtable', remarksKey: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=577' },
+                { nameKey: 'store_chaletcafe', locationKey: 'loc_mi', menuKey: 'menu_chaletcafe', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=648' },
+                { nameKey: 'store_lakeview', locationKey: 'loc_mi', menuKey: 'menu_lakeview', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=225' },
+                { nameKey: 'store_kfc', locationKey: 'loc_outside1f', menuKey: 'menu_kfc', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=609' },
+                { nameKey: 'store_spontini', locationKey: 'loc_outsideb1', menuKey: 'menu_spontini', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=615' },
+                { nameKey: 'store_namsan', locationKey: 'loc_underlandb1', menuKey: 'menu_namsan', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=619' },
+                { nameKey: 'store_fairytale', locationKey: 'loc_underlandb1', menuKey: 'menu_fairytale', remarksKey: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=575' },
+                { nameKey: 'store_ogresfactory', locationKey: 'loc_underlandb1', menuKey: 'menu_ogresfactory', remarksKey: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=220' },
+            ]
+        },
+        'snack': {
+            titleKey: "food_cat_snack_title",
+            list: [
+                { nameKey: 'store_arabian', locationKey: 'loc_adv1f', menuKey: 'menu_arabian', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=573' },
+                { nameKey: 'store_chilling', locationKey: 'loc_adv1f', menuKey: 'menu_chilling', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=676' },
+                { nameKey: 'store_flyv', locationKey: 'loc_adv1f', menuKey: 'menu_flyv', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=675' },
+                { nameKey: 'store_merrygo', locationKey: 'loc_adv1f', menuKey: 'menu_merrygo', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=672' },
+                { nameKey: 'store_omars', locationKey: 'loc_adv1f', menuKey: 'menu_omars', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=682' },
+                { nameKey: 'store_popcornfactory', locationKey: 'loc_adv1f', menuKey: 'menu_popcornfactory', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=633' },
+                { nameKey: 'store_snacksanjose', locationKey: 'loc_adv1f', menuKey: 'menu_snacksanjose', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=574' },
+                { nameKey: 'store_sweetybox', locationKey: 'loc_adv1f', menuKey: 'menu_sweetybox', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=651' },
+                { nameKey: 'store_treeblesnack', locationKey: 'loc_adv1f', menuKey: 'menu_treeblesnack', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=613' },
+                { nameKey: 'store_auntieannes', locationKey: 'loc_adv2f', menuKey: 'menu_auntieannes', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=589' },
+                { nameKey: 'store_delibon', locationKey: 'loc_adv2f', menuKey: 'menu_delibon', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=593' },
+                { nameKey: 'store_junglesnack', locationKey: 'loc_adv3f', menuKey: 'menu_junglesnack', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=591' },
+                { nameKey: 'store_obelisk', locationKey: 'loc_adv4f', menuKey: 'menu_obelisk', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=579' },
+                { nameKey: 'store_pharaohsnack', locationKey: 'loc_adv4f', menuKey: 'menu_pharaohsnack', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=580' },
+                { nameKey: 'store_sphinxsnack', locationKey: 'loc_adv4f', menuKey: 'menu_sphinxsnack', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=232' },
+                { nameKey: 'store_bhcpop_ice', locationKey: 'loc_advb3f_ice', menuKey: 'menu_bhcpop', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=702' },
+                { nameKey: 'store_cabintales', locationKey: 'loc_mi', menuKey: 'menu_cabintales', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=644' },
+                { nameKey: 'store_candycastle', locationKey: 'loc_mi', menuKey: 'menu_candycastle', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=681' },
+                { nameKey: 'store_fruitsworld', locationKey: 'loc_mi', menuKey: 'menu_fruitsworld', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=645' },
+                { nameKey: 'store_giantsnack', locationKey: 'loc_mi', menuKey: 'menu_giantsnack', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=694' },
+                { nameKey: 'store_gyrosnack', locationKey: 'loc_mi', menuKey: 'menu_gyrosnack', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=712' },
+                { nameKey: 'store_magicalcart', locationKey: 'loc_mi', menuKey: 'menu_magicalcart', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=692' },
+                { nameKey: 'store_victoria_bhc', locationKey: 'loc_mi', menuKey: 'menu_bhcpop', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=698' },
+                { nameKey: 'store_waffleuniv', locationKey: 'loc_mi', menuKey: 'menu_waffleuniv', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=687' },
+                { nameKey: 'store_bakudanyaki', locationKey: 'loc_outsideb1', menuKey: 'menu_bakudanyaki', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=700' },
+                { nameKey: 'store_mochistory', locationKey: 'loc_outsideb1', menuKey: 'menu_mochistory', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=622' },
+                { nameKey: 'store_yoonsoop', locationKey: 'loc_outsideb1', menuKey: 'menu_yoonsoop', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=707' },
+                { nameKey: 'store_churrovic', locationKey: 'loc_underlandb1', menuKey: 'menu_churrovic', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=576' },
+            ]
+        },
+        'cafe': {
+            titleKey: "food_cat_cafe_title",
+            list: [
+                { nameKey: 'store_beatbox', locationKey: 'loc_adv1f', menuKey: 'menu_beatbox', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=677' },
+                { nameKey: 'store_cafeatiana', locationKey: 'loc_adv1f', menuKey: 'menu_cafeatiana', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=257' },
+                { nameKey: 'store_louiescowtown', locationKey: 'loc_adv1f', menuKey: 'menu_louiescowtown', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=623' },
+                { nameKey: 'store_paulbassett_adv1f', locationKey: 'loc_adv1f', menuKey: 'menu_paulbassett', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=634' },
+                { nameKey: 'store_sanjose_bhc', locationKey: 'loc_adv1f', menuKey: 'menu_bhcpop', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=654' },
+                { nameKey: 'store_treeblehouse', locationKey: 'loc_adv1f', menuKey: 'menu_treeblehouse', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=596' },
+                { nameKey: 'store_gongcha_adv2f', locationKey: 'loc_adv2f', menuKey: 'menu_gongcha', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=241' },
+                { nameKey: 'store_icefactory', locationKey: 'loc_adv2f', menuKey: 'menu_icefactory', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=592' },
+                { nameKey: 'store_jambajuice', locationKey: 'loc_adv2f', menuKey: 'menu_jambajuice', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=630' },
+                { nameKey: 'store_rhinecart', locationKey: 'loc_adv2f', menuKey: 'menu_rhinecart', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=714' },
+                { nameKey: 'store_wienstrudel', locationKey: 'loc_adv2f', menuKey: 'menu_wienstrudel', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=711' },
+                { nameKey: 'store_beatcoffee_adv3f', locationKey: 'loc_adv3f_korean', menuKey: 'menu_beatcoffee', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=625' },
+                { nameKey: 'store_daldal', locationKey: 'loc_adv3f_korean', menuKey: 'menu_daldal', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=660' },
+                { nameKey: 'store_paulbassett_ice', locationKey: 'loc_advb3f_ice', menuKey: 'menu_paulbassett', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=578' },
+                { nameKey: 'store_atwosome_mi', locationKey: 'loc_mi', menuKey: 'menu_atwosome_mi', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=568' },
+                { nameKey: 'store_gongcha_mi', locationKey: 'loc_mi', menuKey: 'menu_gongcha', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=683' },
+                { nameKey: 'store_magictruck', locationKey: 'loc_mi', menuKey: 'menu_magictruck', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=635' },
+                { nameKey: 'store_salzpan', locationKey: 'loc_mi', menuKey: 'menu_salzpan', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=629' },
+                { nameKey: 'store_atwosome_out1f', locationKey: 'loc_outside1f', menuKey: 'menu_atwosome_out1f', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=643' },
+                { nameKey: 'store_megacoffee', locationKey: 'loc_outside1f', menuKey: 'menu_megacoffee', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=588' },
+                { nameKey: 'store_bellongte', locationKey: 'loc_outsideb1', menuKey: 'menu_bellongte', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=708' },
+                { nameKey: 'store_dangdo', locationKey: 'loc_outsideb1', menuKey: 'menu_dangdo', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=611' },
+                { nameKey: 'store_fulolli', locationKey: 'loc_outsideb1', menuKey: 'menu_fulolli', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=664' },
+                { nameKey: 'store_gongcha_outb1', locationKey: 'loc_outsideb1', menuKey: 'menu_gongcha', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=606' },
+                { nameKey: 'store_whosfan', locationKey: 'loc_outsideb1', menuKey: 'menu_whosfan', remarksKey: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=696' },
+            ]
+        }
+    };
+    
+    // 카테고리 카드 클릭 시 식당 목록 페이지 표시
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const category = card.dataset.category;
+            showRestaurantList(category);
+        });
+    });
+
+    // 식당 목록 페이지를 생성하고 표시하는 함수
+    function showRestaurantList(category) {
+        const data = restaurantData[category];
+        if (!data) return;
+
+        listHeader.innerHTML = `
+            <div class="flex items-center justify-between">
+                <button id="back-to-main" class="bg-gray-200 text-gray-700 font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition-all">&larr; Back</button>
+                <h2 class="text-4xl font-header font-bold text-gray-700" data-translate-key="${data.titleKey}">${getText(data.titleKey)}</h2>
+                <div class="w-24"></div>
+            </div>`;
+
+        listGrid.innerHTML = data.list.map(r => `
+            <a href="${r.url}" target="_blank" class="block bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-6 text-left">
+                <h3 class="text-2xl font-header font-bold text-gray-800 mb-2" data-translate-key="${r.nameKey}">${getText(r.nameKey)}</h3>
+                <p class="text-gray-500 mb-4">
+                    <strong data-translate-key="location">${getText('location')}:</strong> 
+                    <span data-translate-key="${r.locationKey}">${getText(r.locationKey)}</span>
+                </p>
+                <p class="text-gray-700 mb-4" data-translate-key="${r.menuKey}">${getText(r.menuKey)}</p>
+                ${r.remarksKey ? `<p class="text-sm text-red-500 font-semibold" data-translate-key="${r.remarksKey}">${getText(r.remarksKey)}</p>` : ''}
+            </a>`).join('');
+
+        mainView.classList.add('hidden');
+        restaurantListView.classList.remove('hidden');
+        window.scrollTo(0, 0);
+        document.getElementById('back-to-main').addEventListener('click', showMainView);
+    }
+    
+    function showMainView() {
+        restaurantListView.classList.add('hidden');
+        mainView.classList.remove('hidden');
+        window.scrollTo(0, 0);
+    }
+
+// ===================================================================
+// Live Translation Logic
+// ===================================================================
+
+    const languageSelector = document.getElementById('languageSelector');
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    let currentTranslations = {};
+    const originalTexts = {};
+
+    function collectAllTexts() {
+        // 1. 메인 페이지의 정적 텍스트를 수집합니다.
+        document.querySelectorAll('[data-translate-key]').forEach(el => {
+            if (!originalTexts[el.dataset.translateKey]) {
+                 originalTexts[el.dataset.translateKey] = el.innerHTML.trim();
+            }
+        });
+        
+        // 2. restaurantData 객체에 있는 모든 텍스트 정보를 수집합니다.
+        //    이곳에 새로운 업장 정보를 추가하면 번역 기능이 자동으로 적용됩니다.
+        const dataTexts = {
+            "location": "Location",
+            // Remarks
+            "remark_group_dining": "Group dining available",
+            // Locations
+            "loc_adv1f": "Adventure 1F", "loc_adv2f": "Adventure 2F", "loc_adv3f": "Adventure 3F", "loc_adv4f": "Adventure 4F", "loc_advb3f_ice": "Adventure B3F (Ice Garden)", "loc_adv3f_korean": "Adventure 3F (Korean Traditional Restaurants)", "loc_mi": "Magic Island", "loc_outside1f": "Outside the Park 1F", "loc_outsideb1": "Outside the Park B1F", "loc_underlandb1": "Underland B1F",
+            // Stores
+            "store_schoolfood": "School Food", "store_aliceshouse": "Alice's House(Oishi Food)", "store_kimpira": "Kimpira", "store_shanghai": "Shanghai", "store_bodolmiyeok": "Bodolmiyeok", "store_jumak": "Jumak", "store_mongchon": "Mongchon(Chaesundang)", "store_bobaebanjum": "Bobae Banjum", "store_jejukatsu": "Jeju Aewol Katsu", "store_lakefood": "Lake Food", "store_alltokk": "Alltokk", "store_dkore": "DKORE(Bukchangdong Soondubu)", "store_goobok": "Goobok Mandu", "store_jejuojeonbok": "Jeju Ojeonbok", "store_jinjihan": "Jinjihan Gukbap", "store_mara": "Mara Gongbang", "store_milbit": "Milbit Chogye Noodle", "store_onigiri": "Onigiri & Gyudong", "store_phothin": "Pho Thin", "store_youngdabang": "Young Dabang", "store_youve": "You've Youbu", "store_aquaplaza": "Aqua Plaza(Burger Bear)", "store_cafedazur": "Cafe D'azur", "store_crystalpalace": "Crystal Palace(Mad For Garlic)", "store_delkys": "Delkys", "store_lapaloma": "La Paloma(Raracost)", "store_quiznos": "Quiznos", "store_mtable": "M-table", "store_chaletcafe": "Chalet Café(BBQ Village)", "store_lakeview": "Lake View(Mad For Garlic)", "store_kfc": "KFC", "store_spontini": "Spontini", "store_namsan": "101st Namsan Tonkatsu", "store_fairytale": "Fairy Tale(Domino's Pizza)", "store_ogresfactory": "Ogre's Factory(Lotteria)", "store_arabian": "Arabian Bazzar", "store_chilling": "Chilling Station", "store_flyv": "Fly-V Snack", "store_merrygo": "Merry-go-round", "store_omars": "Omar's Delight", "store_popcornfactory": "Popcorn Factory", "store_snacksanjose": "Snack San Jose", "store_sweetybox": "Sweety Box", "store_treeblesnack": "Treeble's Snack", "store_auntieannes": "Auntie Anne's", "store_delibon": "Deli BON", "store_junglesnack": "Jungle Snack", "store_obelisk": "Obelisk", "store_pharaohsnack": "Pharaoh Snack", "store_sphinxsnack": "Sphinx Snack(New York Hotdog)", "store_bhcpop_ice": "bhc pop", "store_cabintales": "Cabin Tales", "store_candycastle": "Candy Castle", "store_fruitsworld": "Fruits World", "store_giantsnack": "Giant Snack", "store_gyrosnack": "Gyro Snack", "store_magicalcart": "Magical Cart", "store_victoria_bhc": "Victoria(bhc pop)", "store_waffleuniv": "Waffle University", "store_bakudanyaki": "Bakudanyaki", "store_mochistory": "Mochi Story", "store_yoonsoop": "Yoonsoop Fruit Sand", "store_churrovic": "Churrovic", "store_beatbox": "Beat Box", "store_cafeatiana": "Cafe Ariana(A Twosome Place)", "store_louiescowtown": "Louie's Cow Town(Pasteur Milk Bar)", "store_paulbassett_adv1f": "Paul Bassett", "store_sanjose_bhc": "San Jose(bhc pop)", "store_treeblehouse": "Treeble House(Sulbing)", "store_gongcha_adv2f": "Gong Cha", "store_icefactory": "Ice Factory", "store_jambajuice": "Jamba Juice", "store_rhinecart": "Rhine Cart(Snack Bar)", "store_wienstrudel": "Wien Strudel", "store_beatcoffee_adv3f": "Beat Coffee", "store_daldal": "DALDAL Dessert Market", "store_paulbassett_ice": "Paul Bassett", "store_atwosome_mi": "A Twosome Place", "store_gongcha_mi": "Gong Cha", "store_magictruck": "Magic Truck(Milky)", "store_salzpan": "Salzpan Gelato", "store_atwosome_out1f": "A Twosome Place", "store_megacoffee": "Mega Coffee", "store_bellongte": "Bellongte", "store_dangdo": "Dangdo", "store_fulolli": "Fulolli", "store_gongcha_outb1": "Gong Cha", "store_whosfan": "Whosfan Cafe & Store",
+            // Menus
+            "menu_schoolfood": "Gimbap(Korean seaweed rice rolls), Tteokbokki(spicy stir-fried rice cakes)", "menu_aliceshouse": "Noodles, Fried Rice", "menu_kimpira": "Tteokbokki(spicy stir-fried rice cakes), Pizza", "menu_shanghai": "Chinese Cuisine", "menu_bodolmiyeok": "Seawood Soup, Raw fish", "menu_jumak": "Bibimbap, Savory pancakes, Korean food", "menu_mongchon": "Shabu shabu(Korean hot pot)", "menu_bobaebanjum": "Chinese Cuisine", "menu_jejukatsu": "Tonkatsu(pork cutlet), Noodles, Rice", "menu_lakefood": "Bunsik(Korean street food)", "menu_alltokk": "Tteokbokki(spicy stir-fried rice cakes)", "menu_dkore": "Soft Tofu Stew", "menu_goobok": "Mandu(Korean dumpling), Dumpling soup", "menu_jejuojeonbok": "Korean food with abalones", "menu_jinjihan": "Gukbap(Korean rice soup)", "menu_mara": "Maratang(Chinese hot pot)", "menu_milbit": "Chogye noodle(cold noodle with chicken)", "menu_onigiri": "Japanese(Onigiri, Tonburi)", "menu_phothin": "Vietnamese(Pho, fried rice)", "menu_youngdabang": "Tteokbokki(spicy stir-fried rice cake)", "menu_youve": "Fried Tofu Rice Balls, Ramen", "menu_aquaplaza": "Burger, Fried chicken, Tteokbokki(spicy stir-fried rice cakes)", "menu_cafedazur": "Burgers", "menu_crystalpalace": "Pizza, Steak, Pasta", "menu_delkys": "Kebab, Drinks", "menu_lapaloma": "Steak, Pasta, Pilaf", "menu_quiznos": "Sub Sandwiches, Salad, Soup", "menu_mtable": "Hawaiian Casual, Food Court", "menu_chaletcafe": "Fried chicken, Pizza, Beer", "menu_lakeview": "Chicken, sausage", "menu_kfc": "Burgers, Chicken", "menu_spontini": "Slice Pizza", "menu_namsan": "Tonkatsu(pork cutlet), Korean street food", "menu_fairytale": "Pizza, Pasta", "menu_ogresfactory": "Burgers, Chicken, Snacks", "menu_arabian": "Snacks", "menu_chilling": "Mexican, Churros", "menu_flyv": "Popcorn, Fruit Slush", "menu_merrygo": "Butter-grilled Squid, Corns", "menu_omars": "Oreo Churros, Milkshake", "menu_popcornfactory": "Popcorn", "menu_snacksanjose": "Churros, Grilled sausage, Hot dog", "menu_sweetybox": "Cotton Candy", "menu_treeblesnack": "Churros, Slush, Character snacks", "menu_auntieannes": "Pretzels, Hot dog, Coffee", "menu_delibon": "French Fries, Waffle, Smoothie", "menu_junglesnack": "Buttered corn, Coffee, Ice cream", "menu_obelisk": "Waffle, Sausage", "menu_pharaohsnack": "Tteokbokki, Waffle, Churros", "menu_sphinxsnack": "Hotdogs, Drinks", "menu_bhcpop": "Colpop(Chicken nuggets with coke)", "menu_cabintales": "Churros, Sausage, Drinks", "menu_candycastle": "Gyro Churros, Ttukbokki(spicy rice cake), French fries", "menu_fruitsworld": "Fruit juice, Buttered corn, Slush", "menu_giantsnack": "Giant Chicken Legs, Snacks", "menu_gyrosnack": "Chicken skewers, Snow Ice", "menu_magicalcart": "Snacks, Drinks", "menu_waffleuniv": "Korean style Waffle", "menu_bakudanyaki": "Big sized takoyaki", "menu_mochistory": "Fruit Mochi", "menu_yoonsoop": "Fruit Sandwich, Dacquoise", "menu_churrovic": "Churros, Hot Chocolate", "menu_beatbox": "Coffee made by robot", "menu_cafeatiana": "Coffee, Soft drinks", "menu_louiescowtown": "Ice cream, Milkshake, Yogurt", "menu_paulbassett": "Coffee, Specialty Coffee", "menu_treeblehouse": "Korean desserts, Bingsu(shaved ice)", "menu_gongcha": "Bubble Tea", "menu_icefactory": "Ice candy", "menu_jambajuice": "Smoothies, Fresh Juice", "menu_rhinecart": "Churros, Gelato", "menu_wienstrudel": "Soft Ice Cream, Gelato", "menu_beatcoffee": "Coffee made by robot", "menu_daldal": "Korean Desserts, Ice cream", "menu_atwosome_mi": "Coffee, Drinks, Dessert", "menu_magictruck": "Ice Cream, Yogurt", "menu_salzpan": "Salzpan Gelato(Salt bread ice cream sandwich)", "menu_atwosome_out1f": "Dessert, Coffee", "menu_megacoffee": "Big Size Coffee, Drinks", "menu_bellongte": "Ice cream, Pudding", "menu_dangdo": "Handmade Gelato", "menu_fulolli": "Vegan gelato", "menu_whosfan": "K-pop themed café"
+        };
+        Object.assign(originalTexts, dataTexts);
+    }
+    
+    collectAllTexts();
+    
+    function getText(key) { return currentTranslations[key] || originalTexts[key] || ''; }
+
+    languageSelector.addEventListener('change', async (event) => {
+        const targetLang = event.target.value;
+        if (targetLang === 'en') {
+            currentTranslations = {};
+            applyTranslations(originalTexts);
+        } else {
+            await translatePage(targetLang);
+        }
+    });
+
+    async function translatePage(langCode) {
+        loadingOverlay.style.display = 'flex';
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+        const prompt = `Translate the JSON values to ${langCode}. Return only the valid JSON object. JSON: ${JSON.stringify(originalTexts)}`;
+        const payload = { contents: [{ parts: [{ text: prompt }] }], generationConfig: { responseMimeType: "application/json" } };
+
+        try {
+            const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+            if (!response.ok) throw new Error(`API Error: ${response.statusText}`);
+            const result = await response.json();
+            currentTranslations = JSON.parse(result.candidates[0].content.parts[0].text);
+            applyTranslations(currentTranslations);
+        } catch (error) {
+            console.error('Translation failed:', error);
+            alert('Translation failed.');
+            applyTranslations(originalTexts);
+        } finally {
+            loadingOverlay.style.display = 'none';
+        }
+    }
+
+    function applyTranslations(translationMap) {
+        document.querySelectorAll('[data-translate-key]').forEach(el => {
+            const key = el.dataset.translateKey;
+            if (translationMap[key]) {
+                el.innerHTML = translationMap[key];
+            }
+        });
+        
+        const activeCategoryTitleKey = document.querySelector('#list-header h2')?.dataset.translateKey;
+        if(activeCategoryTitleKey){
+             const categoryKey = Object.keys(restaurantData).find(key => restaurantData[key].titleKey === activeCategoryTitleKey);
+             if(categoryKey) showRestaurantList(categoryKey);
+        }
+    }
+});
+</script>
+
+</body>
+</html>

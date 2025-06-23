@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotte World - Guide for Visitors</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins (Body) & Fredoka (Headers) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* 헤더와 섹션 제목에 귀여운 폰트 적용 */
+        .font-header {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* 카드 호버 애니메이션 */
+        .bouncy-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bouncy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        /* 토글 아이콘 애니메이션 */
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- 메인 콘텐츠 뷰 -->
+        <div id="main-view">
+            <!-- Header Section -->
+            <header class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-header font-bold text-gray-800">Lotte World Visitor's Guide</h1>
+                <p class="text-lg text-gray-600 mt-3">Find the best food, shops, and seasonal items!</p>
+            </header>
+
+            <!-- Seasonal Specials Section -->
+            <section id="seasonal" class="mb-16">
+                 <h2 class="text-4xl font-header font-bold mb-8 text-pink-600 border-b-4 border-pink-200 pb-3">Seasonal Specials</h2>
+                <div class="grid grid-cols-1">
+                     <a href="https://adventure.lotteworld.com/kor/enjoy/festival/view.do" target="_blank" class="bouncy-card block bg-white rounded-2xl shadow-lg overflow-hidden p-8 text-center">
+                        <h3 class="text-3xl font-header text-pink-600">Pokemon World Adventure : Summer Festa</h3>
+                        <p class="mt-4 text-lg text-gray-600">Don't miss out on the limited edition Lotte World Pokemon merchandise and menu items for the summer!</p>
+                     </a>
+                </div>
+            </section>
+
+            <!-- Food & Restaurants Section -->
+            <section id="food" class="mb-16">
+                <h2 class="text-4xl font-header font-bold mb-8 text-red-600 border-b-4 border-red-200 pb-3">Food & Restaurants</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bouncy-card category-card cursor-pointer" data-type="food" data-category="korean-asian">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-red-500 text-white"><h3 class="text-2xl font-header">Korean & Asian</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600">Traditional flavors and popular Asian dishes.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-type="food" data-category="western">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-blue-500 text-white"><h3 class="text-2xl font-header">Western</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600">Pasta, pizza, and hearty American-style dining.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-type="food" data-category="snack">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-yellow-500 text-white"><h3 class="text-2xl font-header">Snack</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600">Churros, popcorn, and other quick, fun bites.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-type="food" data-category="cafe">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-green-500 text-white"><h3 class="text-2xl font-header">Cafe</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600">Coffee, tea, and sweet desserts for a relaxing break.</p></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gift & Merchandise Section -->
+            <section id="shops" class="mb-16">
+                 <h2 class="text-4xl font-header font-bold mb-8 text-indigo-600 border-b-4 border-indigo-200 pb-3">Gift & Merchandise</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bouncy-card category-card cursor-pointer" data-type="shop" data-category="experience">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-indigo-500 text-white"><h3 class="text-2xl font-header">Experience</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600">Unique experiences like dress rentals, photo booths, and arcades.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-type="shop" data-category="gift-shop">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-purple-500 text-white"><h3 class="text-2xl font-header">Gift Shop</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600">Find character goods, apparel, toys, and souvenirs.</p></div></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- 목록 뷰 (초기에는 숨겨짐) -->
+        <div id="list-view" class="hidden">
+            <div id="list-header" class="mb-8"></div>
+            <div id="list-container" class="space-y-4"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center p-8 mt-12 bg-gray-800 text-white">
+        <p class="font-semibold">&copy; 2024 Lotte World. All Rights Reserved.</p>
+        <p class="text-sm text-gray-400 mt-1">Enjoy your magical day at Lotte World!</p>
+    </footer>
+
+<script>
+// ===================================================================
+// 페이지 네비게이션 및 데이터 관리
+// ===================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const mainView = document.getElementById('main-view');
+    const listView = document.getElementById('list-view');
+    const listHeader = document.getElementById('list-header');
+    const listContainer = document.getElementById('list-container');
+
+    // ==================================================================
+    // [업장 정보]
+    // ==================================================================
+    const foodData = {
+        'korean-asian': {
+            title: "Korean & Asian",
+            list: [
+                { name: 'School Food', location: 'Adventure 1F', menu: 'Gimbap(Korean seaweed rice rolls), Tteokbokki(spicy stir-fried rice cakes)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=680' },
+                { name: "Alice's House(Oishi Food)", location: 'Adventure 2F', menu: 'Noodles, Fried Rice', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=585' },
+                { name: 'Kimpira', location: 'Adventure 2F', menu: 'Tteokbokki(spicy stir-fried rice cakes), Pizza', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=584' },
+                { name: 'Shanghai', location: 'Adventure 2F', menu: 'Chinese Cuisine', remarks: 'Group dining available', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=243' },
+                { name: 'Bodolmiyeok', location: 'Adventure 3F (Korean Traditional Restaurants)', menu: 'Seawood Soup, Raw fish', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=684' },
+                { name: 'Jumak', location: 'Adventure 3F (Korean Traditional Restaurants)', menu: 'Bibimbap, Savory pancakes, Korean food', remarks: 'Group dining available', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=211' },
+                { name: 'Mongchon(Chaesundang)', location: 'Adventure 3F (Korean Traditional Restaurants)', menu: 'Shabu shabu(Korean hot pot)', remarks: 'Group dining available', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=612' },
+                { name: "You've Youbu", location: 'Adventure B1F (Underland)', menu: 'Fried Tofu Rice Balls, Ramen', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=608' },
+                { name: 'Bobae Banjum', location: 'Outside the Park B3F (Ice Garden)', menu: 'Chinese Cuisine', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=656' },
+                { name: 'Jeju Aewol Katsu', location: 'Outside the Park B3F (Ice Garden)', menu: 'Tonkatsu(pork cutlet), Noodles, Rice', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=666' },
+                { name: 'Lake Food', location: 'Magic Island', menu: 'Bunsik(Korean street food)', remarks: 'Group dining available', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=230' },
+                { name: 'Alltokk', location: 'Outside the Park 1F', menu: 'Tteokbokki(spicy stir-fried rice cakes)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=632' },
+                { name: 'DKORE(Bukchangdong Soondubu)', location: 'Outside the Park B1F', menu: 'Soft Tofu Stew', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=637' },
+                { name: 'Goobok Mandu', location: 'Outside the Park B1F', menu: 'Mandu(Korean dumpling), Dumpling soup', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=665' },
+                { name: 'Jeju Ojeonbok', location: 'Outside the Park B1F', menu: 'Korean food with abalones', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=690' },
+                { name: 'Jinjihan Gukbap', location: 'Outside the Park B1F', menu: 'Gukbap(Korean rice soup)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=658' },
+                { name: 'Mara Gongbang', location: 'Outside the Park B1F', menu: 'Maratang(Chinese hot pot)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=566' },
+                { name: 'Milbit Chogye Noodle', location: 'Outside the Park B1F', menu: 'Chogye noodle(cold noodle with chicken)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=670' },
+                { name: 'Onigiri & Gyudong', location: 'Outside the Park B1F', menu: 'Japanese(Onigiri, Tonburi)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=704' },
+                { name: 'Pho Thin', location: 'Outside the Park B1F', menu: 'Vietnamese(Pho, fried rice)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=638' },
+                { name: 'Young Dabang', location: 'Outside the Park B1F', menu: 'Tteokbokki(spicy stir-fried rice cake)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=639' },
+            ]
+        },
+        'western': {
+            title: "Western",
+            list: [
+                { name: "Aqua Plaza(Burger Bear)", location: 'Adventure 1F', menu: 'Burger, Fried chicken, Tteokbokki(spicy stir-fried rice cakes)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=650' },
+                { name: "Cafe D'azur", location: 'Adventure 1F', menu: 'Burgers', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=649' },
+                { name: "Crystal Palace(Mad For Garlic)", location: 'Adventure 1F', menu: 'Pizza, Steak, Pasta', remarks: 'Group dining available', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=253' },
+                { name: 'Delkys', location: 'Adventure 2F', menu: 'Kebab, Drinks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=590' },
+                { name: 'La Paloma(Raracost)', location: 'Adventure 2F', menu: 'Steak, Pasta, Pilaf', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=581' },
+                { name: 'Quiznos', location: 'Adventure 2F', menu: 'Sub Sandwiches, Salad, Soup', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=586' },
+                { name: 'M-table', location: 'Adventure 3F', menu: 'Hawaiian Casual, Food Court', remarks: 'Group dining available', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=577' },
+                { name: '101st Namsan Tonkatsu', location: 'Adventure B1F (Underland)', menu: 'Tonkatsu(pork cutlet), Korean street food', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=619' },
+                { name: "Fairy Tale(Domino's Pizza)", location: 'Adventure B1F (Underland)', menu: 'Pizza, Pasta', remarks: 'Group dining available', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=575' },
+                { name: "Ogre's Factory(Lotteria)", location: 'Adventure B1F (Underland)', menu: 'Burgers, Chicken, Snacks', remarks: 'Group dining available', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=220' },
+                { name: 'Chalet Café(BBQ Village)', location: 'Magic Island', menu: 'Fried chicken, Pizza, Beer', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=648' },
+                { name: 'Lake View(Mad For Garlic)', location: 'Magic Island', menu: 'Chicken, sausage', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=225' },
+                { name: 'KFC', location: 'Outside the Park 1F', menu: 'Burgers, Chicken', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=609' },
+                { name: 'Spontini', location: 'Outside the Park B1F', menu: 'Slice Pizza', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=615' },
+            ]
+        },
+        'snack': {
+            title: "Snack",
+            list: [
+                { name: 'Arabian Bazzar', location: 'Adventure 1F', menu: 'Snacks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=573' },
+                { name: 'Chilling Station', location: 'Adventure 1F', menu: 'Mexican, Churros', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=676' },
+                { name: 'Fly-V Snack', location: 'Adventure 1F', menu: 'Popcorn, Fruit Slush', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=675' },
+                { name: 'Merry-go-round', location: 'Adventure 1F', menu: 'Butter-grilled Squid, Corns', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=672' },
+                { name: "Omar's Delight", location: 'Adventure 1F', menu: 'Oreo Churros, Milkshake', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=682' },
+                { name: 'Popcorn Factory', location: 'Adventure 1F', menu: 'Popcorn', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=633' },
+                { name: 'Snack San Jose', location: 'Adventure 1F', menu: 'Churros, Grilled sausage, Hot dog', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=574' },
+                { name: 'Sweety Box', location: 'Adventure 1F', menu: 'Cotton Candy', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=651' },
+                { name: "Treeble's Snack", location: 'Adventure 1F', menu: 'Churros, Slush, Character snacks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=613' },
+                { name: "Auntie Anne's", location: 'Adventure 2F', menu: 'Pretzels, Hot dog, Coffee', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=589' },
+                { name: 'Deli BON', location: 'Adventure 2F', menu: 'French Fries, Waffle, Smoothie', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=593' },
+                { name: 'Jungle Snack', location: 'Adventure 3F', menu: 'Buttered corn, Coffee, Ice cream', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=591' },
+                { name: 'Obelisk', location: 'Adventure 4F', menu: 'Waffle, Sausage', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=579' },
+                { name: 'Pharaoh Snack', location: 'Adventure 4F', menu: 'Tteokbokki, Waffle, Churros', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=580' },
+                { name: 'Sphinx Snack(New York Hotdog)', location: 'Adventure 4F', menu: 'Hotdogs, Drinks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=232' },
+                { name: 'Churrovic', location: 'Adventure B1F (Underland)', menu: 'Churros, Hot Chocolate', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=576' },
+                { name: 'bhc pop', location: 'Outside the Park B3F (Ice Garden)', menu: 'Colpop(Chicken nuggets with coke)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=702' },
+                { name: 'Cabin Tales', location: 'Magic Island', menu: 'Churros, Sausage, Drinks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=644' },
+                { name: 'Candy Castle', location: 'Magic Island', menu: 'Gyro Churros, Ttukbokki(spicy rice cake), French fries', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=681' },
+                { name: 'Fruits World', location: 'Magic Island', menu: 'Fruit juice, Buttered corn, Slush', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=645' },
+                { name: 'Giant Snack', location: 'Magic Island', menu: 'Giant Chicken Legs, Snacks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=694' },
+                { name: 'Gyro Snack', location: 'Magic Island', menu: 'Chicken skewers, Snow Ice', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=712' },
+                { name: 'Magical Cart', location: 'Magic Island', menu: 'Snacks, Drinks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=692' },
+                { name: 'Victoria(bhc pop)', location: 'Magic Island', menu: 'Colpop(Chicken nuggets with coke)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=698' },
+                { name: 'Waffle University', location: 'Magic Island', menu: 'Korean style Waffle', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=687' },
+                { name: 'Bakudanyaki', location: 'Outside the Park B1F', menu: 'Big sized takoyaki', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=700' },
+                { name: 'Mochi Story', location: 'Outside the Park B1F', menu: 'Fruit Mochi', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=622' },
+                { name: 'Yoonsoop Fruit Sand', location: 'Outside the Park B1F', menu: 'Fruit Sandwich, Dacquoise', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=707' },
+            ]
+        },
+        'cafe': {
+            title: "Cafe",
+            list: [
+                 { name: 'Beat Box', location: 'Adventure 1F', menu: 'Coffee made by robot', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=677' },
+                 { name: "Cafe Ariana(A Twosome Place)", location: 'Adventure 1F', menu: 'Coffee, Soft drinks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=257' },
+                 { name: "Louie's Cow Town(Pasteur Milk Bar)", location: 'Adventure 1F', menu: 'Ice cream, Milkshake, Yogurt', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=623' },
+                 { name: 'Paul Bassett', location: 'Adventure 1F', menu: 'Coffee, Specialty Coffee', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=634' },
+                 { name: 'San Jose(bhc pop)', location: 'Adventure 1F', menu: 'Colpop(Chicken nuggets with coke)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=654' },
+                 { name: 'Treeble House(Sulbing)', location: 'Adventure 1F', menu: 'Korean desserts, Bingsu(shaved ice)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=596' },
+                 { name: 'Gong Cha', location: 'Adventure 2F', menu: 'Bubble Tea', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=241' },
+                 { name: 'Ice Factory', location: 'Adventure 2F', menu: 'Ice candy', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=592' },
+                 { name: 'Jamba Juice', location: 'Adventure 2F', menu: 'Smoothies, Fresh Juice', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=630' },
+                 { name: 'Rhine Cart(Snack Bar)', location: 'Adventure 2F', menu: 'Churros, Gelato', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=714' },
+                 { name: 'Wien Strudel', location: 'Adventure 2F', menu: 'Soft Ice Cream, Gelato', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=711' },
+                 { name: 'Beat Coffee', location: 'Adventure 3F (Korean Traditional Restaurants)', menu: 'Coffee made by robot', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=625' },
+                 { name: 'DALDAL Dessert Market', location: 'Adventure 3F (Korean Traditional Restaurants)', menu: 'Korean Desserts, Ice cream', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=660' },
+                 { name: 'Paul Bassett', location: 'Outside the Park B3F (Ice Garden)', menu: 'Coffee, Specialty Coffee', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=578' },
+                 { name: 'A Twosome Place', location: 'Magic Island', menu: 'Coffee, Drinks, Dessert', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=568' },
+                 { name: 'Gong Cha', location: 'Magic Island', menu: 'Bubble Tea', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=683' },
+                 { name: 'Magic Truck(Milky)', location: 'Magic Island', menu: 'Ice Cream, Yogurt', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=635' },
+                 { name: 'Salzpan Gelato', location: 'Magic Island', menu: 'Salzpan Gelato(Salt bread ice cream sandwich)', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=629' },
+                 { name: 'A Twosome Place', location: 'Outside the Park 1F', menu: 'Dessert, Coffee', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=643' },
+                 { name: 'Mega Coffee', location: 'Outside the Park 1F', menu: 'Big Size Coffee, Drinks', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=588' },
+                 { name: 'Bellongte', location: 'Outside the Park B1F', menu: 'Ice cream, Pudding', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=708' },
+                 { name: 'Dangdo', location: 'Outside the Park B1F', menu: 'Handmade Gelato', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=611' },
+                 { name: 'Fulolli', location: 'Outside the Park B1F', menu: 'Vegan gelato', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=664' },
+                 { name: 'Gong Cha', location: 'Outside the Park B1F', menu: 'Bubble Tea', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=606' },
+                 { name: 'Whosfan Cafe & Store', location: 'Outside the Park B1F', menu: 'K-pop themed café', remarks: null, url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=696' },
+            ]
+        }
+    };
+
+    const shopData = {
+        'experience': {
+            title: "Experience",
+            list: [
+                { name: "SharonCat Dress", location: "Adventure 1F", menu: "Dress rental & makeup service, Parade experience package", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=246" },
+                { name: "A Photo Shop", location: "Adventure 1F", menu: "Photo print service", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=128" },
+                { name: "Acorn Caricature", location: "Adventure 1F", menu: "Caricature drawing", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=289" },
+                { name: "Pixie Magic", location: "Adventure B1F (Underland)", menu: "School uniform rental", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=254" },
+                { name: "SharonCat Premium Lounge", location: "Adventure B1F (Underland)", menu: "Dress rental & makeup service, Parade experience package", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=247" },
+                { name: "BONITA(Life 4 Cut)", location: "Adventure 2F", menu: "Photo booth", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=251" },
+                { name: "Aventura Tarot Card", location: "Adventure 2F", menu: "Tarot reading", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=249" },
+                { name: "Rooftop Gallery", location: "Adventure 4F", menu: "Exhibition, Goods, Caricature drawing", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=291" },
+                { name: "Fun City", location: "Outside the Park B3F (Ice Garden)", menu: "Game arcade", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=292" },
+                { name: "Le VIVANT", location: "Outside the Park B3F (Ice Garden)", menu: "Hair salon", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=296" },
+                { name: "CERAGEM Wellpark", location: "Outside the Park B3F (Ice Garden)", menu: "Indoor playground, Healthcare, Cafe", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=295" },
+                { name: "Gamsung Gyobok", location: "Outside the Park B1F", menu: "School uniform rental", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=242" },
+                { name: "BOOTH LUCK", location: "Outside the Park B1F", menu: "Character goods, Costume rental, Photo booth", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=268" },
+                { name: "Cheez N Shot", location: "Outside the Park B1F", menu: "Photo booth", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=252" }
+            ]
+        },
+        'gift-shop': {
+            title: "Gift Shop",
+            list: [
+                { name: "Lotty's Emporium", location: "Adventure 1F", menu: "Toys, Accessories, Apparel, Collectibles, Gift & Housewares", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=136" },
+                { name: "Sweet World(Weeny Beeny)", location: "Adventure 1F", menu: "Candy, Jelly, Chocolates", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=248" },
+                { name: "Belly's Gift Shop", location: "Adventure 1F", menu: "Character goods(Belly)", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=301" },
+                { name: "Toy Plus", location: "Adventure 1F", menu: "Character goods", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=130" },
+                { name: "Fantasy Gift Shop", location: "Adventure B1F (Underland)", menu: "Toys, Accessories, Apparel, Collectibles, Gift & Housewares", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=135" },
+                { name: "El Prado(18cm)", location: "Adventure 2F", menu: "Phone accessories", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=240" },
+                { name: "Sweet Zone(Weeny Beeny)", location: "Adventure 2F", menu: "Candy, Jelly, Chocolates", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=124" },
+                { name: "Gift Shop(Hello Kitty)", location: "Adventure 4F", menu: "Character goods(Hello Kitty)", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=241" },
+                { name: "Magic Castle Treasures", location: "Magic Island", menu: "Toys, Accessories, Apparel, Collectibles, Gift & Housewares", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=265" },
+                { name: "Gashapon Bandai Official Shop", location: "Outside the Park B1F", menu: "Character goods(Gacha)", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=288" },
+                { name: "BUTTER", location: "Outside the Park B1F", menu: "Toys, Accessories, Apparel, Collectibles, Gift & Housewares", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=258" },
+                { name: "OLENS", location: "Outside the Park B1F", menu: "Contact lenses", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=250" },
+                { name: "Animate", location: "Outside the Park B1F", menu: "Anime goods, Books, Figures, Albums", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=304" },
+                { name: "TOPTEN KIDS", location: "Outside the Park B1F", menu: "Kids apparel & accessories", remarks: null, url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=260" }
+            ]
+        }
+    };
+    
+    // 카테고리 카드 클릭 이벤트
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const type = card.dataset.type;
+            const category = card.dataset.category;
+            
+            const data = type === 'food' ? foodData[category] : shopData[category];
+            showListView(data);
+        });
+    });
+
+    // 목록 뷰 생성 함수 - 위치별 그룹화 및 정렬, 토글 기능 추가
+    function showListView(data) {
+        if (!data) return;
+
+        // 1. 위치별로 업장 그룹화
+        const groupedByLocation = data.list.reduce((acc, item) => {
+            const location = item.location;
+            if (!acc[location]) {
+                acc[location] = [];
+            }
+            acc[location].push(item);
+            return acc;
+        }, {});
+        
+        // 2. 위치 정렬 순서 정의
+        const locationOrder = { "Adventure": 1, "Magic Island": 2, "Outside the Park": 3 };
+        const floorOrder = (floorStr) => {
+            if (!floorStr) return 99;
+            const match = floorStr.match(/B?(\d+)/);
+            if (!match) return 99;
+            let floorNum = parseInt(match[1], 10);
+            return floorStr.includes('B') ? -floorNum : floorNum;
+        };
+
+        const sortedLocations = Object.keys(groupedByLocation).sort((a, b) => {
+            const areaA = Object.keys(locationOrder).find(key => a.includes(key)) || "Unknown";
+            const areaB = Object.keys(locationOrder).find(key => b.includes(key)) || "Unknown";
+            const orderA = locationOrder[areaA] || 99;
+            const orderB = locationOrder[areaB] || 99;
+
+            if (orderA !== orderB) return orderA - orderB;
+            
+            const floorA = floorOrder(a);
+            const floorB = floorOrder(b);
+            return floorA - floorB;
+        });
+
+        // 3. 목록 페이지 헤더 생성
+        listHeader.innerHTML = `
+            <div class="flex items-center justify-between">
+                <button id="back-to-main" class="bg-gray-200 text-gray-700 font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition-all">&larr; Back</button>
+                <h2 class="text-4xl font-header font-bold text-gray-700 text-center">${data.title}</h2>
+                <div class="w-24"></div>
+            </div>`;
+
+        // 4. 정렬된 데이터를 기반으로 토글형 HTML 생성 (모두 펼쳐진 상태 & 카운트 추가)
+        listContainer.innerHTML = sortedLocations.map(location => {
+            const storeCount = groupedByLocation[location].length;
+            return `
+            <div class="location-group border-b-2 pb-4">
+                 <button class="location-toggle-button w-full flex justify-between items-center text-left py-3 px-4 rounded-lg hover:bg-gray-100">
+                    <div class="flex items-center">
+                        <h3 class="text-2xl font-header font-semibold text-gray-600">${location}</h3>
+                        <span class="text-lg font-medium text-gray-500 ml-3">(${storeCount})</span>
+                    </div>
+                    <svg class="toggle-icon w-6 h-6 text-gray-500 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                 </button>
+                 <div class="location-content-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+                    ${groupedByLocation[location].map(item => `
+                        <a href="${item.url}" target="_blank" class="block bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-6 text-left">
+                            <h3 class="text-2xl font-header font-bold text-gray-800 mb-2">${item.name}</h3>
+                            <p class="text-gray-500 mb-4">
+                                <strong>Location:</strong> 
+                                <span>${item.location}</span>
+                            </p>
+                            <p class="text-gray-700 mb-4">${item.menu}</p>
+                            ${item.remarks ? `<p class="text-sm text-red-500 font-semibold">${item.remarks}</p>` : ''}
+                        </a>
+                    `).join('')}
+                 </div>
+            </div>
+            `
+        }).join('');
+
+        // 5. 토글 이벤트 리스너 추가
+        document.querySelectorAll('.location-toggle-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const contentGrid = button.nextElementSibling;
+                const icon = button.querySelector('.toggle-icon');
+                contentGrid.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        mainView.classList.add('hidden');
+        listView.classList.remove('hidden');
+        window.scrollTo(0, 0);
+        document.getElementById('back-to-main').addEventListener('click', showMainView);
+    }
+    
+    function showMainView() {
+        listView.classList.add('hidden');
+        mainView.classList.remove('hidden');
+        window.scrollTo(0, 0);
+    }
+});
+</script>
+
+</body>
+</html>

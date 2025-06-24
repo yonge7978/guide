@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotte World - Guide for Visitors</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins (Body) & Fredoka (Headers) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Poppins:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-header {
+            font-family: 'Fredoka', sans-serif;
+        }
+        :lang(ja) * {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .bouncy-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .bouncy-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        .lang-button.active {
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- 메인 콘텐츠 뷰 -->
+        <div id="main-view">
+            <header class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-header font-bold text-gray-800" data-translate-key="header_title">Lotte World Adventure Guests' Guide</h1>
+                <p class="text-lg text-gray-600 mt-3" data-translate-key="header_subtitle">Enjoy the best tastes, cute merchandise, and special experiences in the land of adventure and mystery!</p>
+            </header>
+
+            <div id="language-switcher" class="text-center mb-12">
+                <div class="inline-flex rounded-full shadow-sm" role="group">
+                    <button type="button" class="lang-button active px-5 py-2.5 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-full hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-indigo-500" data-lang="en">
+                        🇺🇸 English
+                    </button>
+                    <button type="button" class="lang-button px-5 py-2.5 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-indigo-500" data-lang="ja">
+                        🇯🇵 日本語
+                    </button>
+                     <button type="button" class="lang-button px-5 py-2.5 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-indigo-500" data-lang="zh">
+                        �🇳 中文
+                    </button>
+                    <button type="button" class="lang-button px-5 py-2.5 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-full hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-indigo-500" data-lang="es">
+                        🇪🇸 Español
+                    </button>
+                </div>
+            </div>
+
+            <section id="seasonal" class="mb-16">
+                 <h2 class="text-4xl font-header font-bold mb-8 text-pink-600 border-b-4 border-pink-200 pb-3" data-translate-key="seasonal_title">Seasonal Specials</h2>
+                <div class="grid grid-cols-1">
+                     <a href="https://adventure.lotteworld.com/kor/enjoy/festival/view.do" target="_blank" class="bouncy-card block rounded-2xl shadow-lg overflow-hidden relative">
+                        <div style="padding-top: 42.86%;"></div> <!-- 21:9 Aspect Ratio -->
+                        <img src="https://placehold.co/1200x514/FBCFE8/4C1D95?text=21:9+Image" alt="Seasonal festival background" class="absolute inset-0 w-full h-full object-cover">
+                     </a>
+                </div>
+            </section>
+
+            <section id="food" class="mb-16">
+                <h2 class="text-4xl font-header font-bold mb-8 text-red-600 border-b-4 border-red-200 pb-3" data-translate-key="food_title">Food & Restaurants</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bouncy-card category-card cursor-pointer" data-type="food" data-category="korean-asian">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-red-500 text-white"><h3 class="text-2xl font-header" data-translate-key="food_cat_korean_asian_title">Korean & Asian</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="food_cat_korean_asian_desc">From sizzling Bibimbap to savory noodles, dive into the heart of Seoul's vibrant flavors.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-type="food" data-category="western">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-blue-500 text-white"><h3 class="text-2xl font-header" data-translate-key="food_cat_western_title">Western</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="food_cat_western_desc">Craving a classic? Get your fix of juicy burgers, cheesy pizzas, and perfect pasta.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-type="food" data-category="snack">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-yellow-500 text-white"><h3 class="text-2xl font-header" data-translate-key="food_cat_snack_title">Snack</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="food_cat_snack_desc">Churros, popcorn, and other quick, fun bites.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-type="food" data-category="cafe">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-green-500 text-white"><h3 class="text-2xl font-header" data-translate-key="food_cat_cafe_title">Cafe</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="food_cat_cafe_desc">Coffee, tea, and sweet desserts for a relaxing break.</p></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="shops" class="mb-16">
+                 <h2 class="text-4xl font-header font-bold mb-8 text-indigo-600 border-b-4 border-indigo-200 pb-3" data-translate-key="shop_title">Gift & Merchandise</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bouncy-card category-card cursor-pointer" data-type="shop" data-category="experience">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-indigo-500 text-white"><h3 class="text-2xl font-header" data-translate-key="shop_cat_experience_title">Experience</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="shop_cat_experience_desc">Unique experiences like dress rentals, photo booths, and arcades.</p></div></div>
+                    </div>
+                    <div class="bouncy-card category-card cursor-pointer" data-type="shop" data-category="gift-shop">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden h-full flex flex-col"><div class="p-6 text-center bg-purple-500 text-white"><h3 class="text-2xl font-header" data-translate-key="shop_cat_gift_shop_title">Gift Shop</h3></div><div class="p-6 flex-grow flex flex-col justify-center items-center"><p class="text-center text-gray-600" data-translate-key="shop_cat_gift_shop_desc">Find character goods, apparel, toys, and souvenirs.</p></div></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div id="list-view" class="hidden">
+            <div id="list-header" class="mb-8"></div>
+            <div id="list-container" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <footer class="text-center p-8 mt-12 bg-gray-800 text-white">
+        <p class="font-semibold" data-translate-key="footer_rights">&copy; 2025 Lotte World. All Rights Reserved.</p>
+        <p class="text-sm text-gray-400 mt-1" data-translate-key="footer_enjoy">Enjoy your magical day at Lotte World!</p>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const mainView = document.getElementById('main-view');
+    const listView = document.getElementById('list-view');
+    const listHeader = document.getElementById('list-header');
+    const listContainer = document.getElementById('list-container');
+
+    const foodData = {
+        'korean-asian': {
+            list: [
+                { id: 'school_food', name: { en: "School Food", ja: "スクールフード", zh: "School Food", es: "School Food" }, menu: { en: "Gimbap, Tteokbokki", ja: "キンパ、トッポッキ", zh: "紫菜包饭, 炒年糕", es: "Gimbap, Tteokbokki" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=680' },
+                { id: 'alices_house', name: { en: "Alice's House(Oishi Food)", ja: "アリスの家(Oishi Food)", zh: "爱丽丝的房子(Oishi Food)", es: "Casa de Alicia(Oishi Food)" }, menu: { en: "Noodles, Fried Rice", ja: "麺類、チャーハン", zh: "面条, 炒饭", es: "Fideos, Arroz frito" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=585' },
+                { id: 'kimpira', name: { en: "Kimpira", ja: "キンピラ", zh: "Kimpira", es: "Kimpira" }, menu: { en: "Tteokbokki, Pizza", ja: "トッポッキ、ピザ", zh: "炒年糕, 披萨", es: "Tteokbokki, Pizza" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=584' },
+                { id: 'shanghai', name: { en: "Shanghai", ja: "上海", zh: "上海", es: "Shanghai" }, menu: { en: "Chinese Cuisine", ja: "中華料理", zh: "中华料理", es: "Cocina china" }, location: 'Adventure 2F', remarks: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=243' },
+                { id: 'bodolmiyeok', name: { en: "Bodolmiyeok", ja: "ボドルミヨッ", zh: "Bodolmiyeok", es: "Bodolmiyeok" }, menu: { en: "Seaweed Soup, Raw fish", ja: "わかめスープ、刺身", zh: "海带汤, 生鱼片", es: "Sopa de algas, Pescado crudo" }, location: 'Adventure 3F (Korean Traditional Restaurants)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=684' },
+                { id: 'jumak', name: { en: "Jumak", ja: "チュマク", zh: "酒馆", es: "Jumak" }, menu: { en: "Bibimbap, Savory pancakes, Korean food", ja: "ビビンバ、チヂミ、韓国料理", zh: "拌饭, 葱饼, 韩餐", es: "Bibimbap, Tortitas saladas, Comida coreana" }, location: 'Adventure 3F (Korean Traditional Restaurants)', remarks: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=211' },
+                { id: 'mongchon', name: { en: "Mongchon(Chaesundang)", ja: "モンチョン(チェソンダン)", zh: "梦村(菜善堂)", es: "Mongchon(Chaesundang)" }, menu: { en: "Shabu shabu(Korean hot pot)", ja: "しゃぶしゃぶ(韓国式鍋)", zh: "韩式火锅", es: "Shabu-shabu (caldero coreano)" }, location: 'Adventure 3F (Korean Traditional Restaurants)', remarks: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=612' },
+                { id: 'youve_youbu', name: { en: "You've Youbu", ja: "ユーブユブ", zh: "You've Youbu", es: "You've Youbu" }, menu: { en: "Fried Tofu Rice Balls, Ramen", ja: "いなり寿司、ラーメン", zh: "炸豆皮寿司, 拉面", es: "Bolas de arroz de tofu frito, Ramen" }, location: 'Adventure B1F (Underland)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=608' },
+                { id: 'namsan_tonkatsu', name: { en: "101st Namsan Tonkatsu", ja: "101番地南山とんかつ", zh: "第101南山炸猪排", es: "101st Namsan Tonkatsu" }, menu: { en: "Tonkatsu(pork cutlet), Korean street food", ja: "とんかつ、韓国屋台料理", zh: "炸猪排, 韩式小吃", es: "Tonkatsu (chuleta de cerdo), Comida callejera coreana" }, location: 'Adventure B1F (Underland)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=619' },
+                { id: 'bobaebanjum', name: { en: "Bobae Banjum", ja: "ポベパンジョム", zh: "宝背半点", es: "Bobae Banjum" }, menu: { en: "Chinese Cuisine", ja: "中華料理", zh: "中华料理", es: "Cocina china" }, location: 'Outside the Park B3F (Ice Garden)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=656' },
+                { id: 'jeju_aewol_katsu', name: { en: "Jeju Aewol Katsu", ja: "済州エウォルカツ", zh: "济州涯月炸猪排", es: "Jeju Aewol Katsu" }, menu: { en: "Tonkatsu(pork cutlet), Noodles, Rice", ja: "とんかつ、麺類、ご飯", zh: "炸猪排, 面条, 米饭", es: "Tonkatsu (chuleta de cerdo), Fideos, Arroz" }, location: 'Outside the Park B3F (Ice Garden)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=666' },
+                { id: 'lake_food', name: { en: "Lake Food", ja: "レイクフード", zh: "湖畔美食", es: "Lake Food" }, menu: { en: "Bunsik(Korean street food)", ja: "粉食(韓国の屋台料理)", zh: "韩式小吃", es: "Bunsik (comida callejera coreana)" }, location: 'Magic Island', remarks: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=230' },
+                { id: 'alltokk', name: { en: "Alltokk", ja: "オルトク", zh: "Alltokk", es: "Alltokk" }, menu: { en: "Tteokbokki(spicy stir-fried rice cakes)", ja: "トッポッキ(甘辛い餅炒め)", zh: "炒年糕", es: "Tteokbokki (pasteles de arroz salteados picantes)" }, location: 'Outside the Park 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=632' },
+                { id: 'dkore', name: { en: "DKORE(Bukchangdong Soondubu)", ja: "ディコア(プクチャンドンスンドゥブ)", zh: "DKORE(北仓洞嫩豆腐)", es: "DKORE(Bukchangdong Soondubu)" }, menu: { en: "Soft Tofu Stew", ja: "スンドゥブチゲ", zh: "嫩豆腐汤", es: "Estofado de tofu suave" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=637' },
+                { id: 'goobok_mandu', name: { en: "Goobok Mandu", ja: "クボク饅頭", zh: "旧福饺子", es: "Goobok Mandu" }, menu: { en: "Mandu(Korean dumpling), Dumpling soup", ja: "マンドゥ(韓国餃子)、餃子スープ", zh: "饺子, 饺子汤", es: "Mandu (empanadilla coreana), Sopa de empanadillas" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=665' },
+                { id: 'jeju_ojeonbok', name: { en: "Jeju Ojeonbok", ja: "済州オジョンボク", zh: "济州五鲍", es: "Jeju Ojeonbok" }, menu: { en: "Korean food with abalones", ja: "アワビを使った韓国料理", zh: "鲍鱼韩餐", es: "Comida coreana con abulones" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=690' },
+                { id: 'jinjihan_gukbap', name: { en: "Jinjihan Gukbap", ja: "チンジハンクッパ", zh: "真挚的汤饭", es: "Jinjihan Gukbap" }, menu: { en: "Gukbap(Korean rice soup)", ja: "クッパ(韓国のスープご飯)", zh: "汤饭", es: "Gukbap (sopa de arroz coreana)" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=658' },
+                { id: 'mara_gongbang', name: { en: "Mara Gongbang", ja: "麻辣工房", zh: "麻辣工房", es: "Mara Gongbang" }, menu: { en: "Maratang(Chinese hot pot)", ja: "麻辣湯(マーラータン)", zh: "麻辣烫", es: "Maratang (caldero chino)" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=566' },
+                { id: 'milbit_chogye', name: { en: "Milbit Chogye Noodle", ja: "ミルピッチョゲミョン", zh: "密光草鸡面", es: "Fideos Milbit Chogye" }, menu: { en: "Chogye noodle(cold noodle with chicken)", ja: "チョゲグクス(鶏肉入り冷麺)", zh: "草鸡冷面", es: "Fideos chogye (fideos fríos con pollo)" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=670' },
+                { id: 'onigiri_gyudong', name: { en: "Onigiri & Gyudong", ja: "おにぎり＆牛丼", zh: "饭团&牛丼", es: "Onigiri y Gyudong" }, menu: { en: "Japanese(Onigiri, Tonburi)", ja: "和食(おにぎり、丼物)", zh: "日式(饭团, 盖饭)", es: "Japonés (Onigiri, Donburi)" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=704' },
+                { id: 'pho_thin', name: { en: "Pho Thin", ja: "フォー・ティン", zh: "Pho Thin", es: "Pho Thin" }, menu: { en: "Vietnamese(Pho, fried rice)", ja: "ベトナム料理(フォー、チャーハン)", zh: "越南(米粉, 炒饭)", es: "Vietnamita (Pho, arroz frito)" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=638' },
+                { id: 'young_dabang', name: { en: "Young Dabang", ja: "青年茶房", zh: "青年茶房", es: "Young Dabang" }, menu: { en: "Tteokbokki(spicy stir-fried rice cake)", ja: "トッポッキ(甘辛い餅炒め)", zh: "炒年糕", es: "Tteokbokki (pastel de arroz salteado picante)" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=639' },
+            ]
+        },
+        'western': {
+            list: [
+                { id: 'aqua_plaza', name: { en: "Aqua Plaza(Burger Bear)", ja: "アクアプラザ(バーガーベア)", zh: "水上广场(汉堡熊)", es: "Aqua Plaza(Burger Bear)" }, menu: { en: "Burger, Fried chicken, Tteokbokki", ja: "ハンバーガー、フライドチキン、トッポッキ", zh: "汉堡, 炸鸡, 炒年糕", es: "Hamburguesa, Pollo frito, Tteokbokki" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=650' },
+                { id: 'cafe_dazur', name: { en: "Cafe D'azur", ja: "カフェ・ダジュール", zh: "蔚蓝海岸咖啡馆", es: "Café D'azur" }, menu: { en: "Burgers", ja: "ハンバーガー", zh: "汉堡", es: "Hamburguesas" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=649' },
+                { id: 'crystal_palace', name: { en: "Crystal Palace(Mad For Garlic)", ja: "クリスタルパレス(マッドフォーガーリック)", zh: "水晶宫(Mad For Garlic)", es: "Crystal Palace(Mad For Garlic)" }, menu: { en: "Pizza, Steak, Pasta", ja: "ピザ、ステーキ、パスタ", zh: "披萨, 牛排, 意大利面", es: "Pizza, Bistec, Pasta" }, location: 'Adventure 1F', remarks: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=253' },
+                { id: 'delkys', name: { en: "Delkys", ja: "デルキーズ", zh: "Delkys", es: "Delkys" }, menu: { en: "Kebab, Drinks", ja: "ケバブ、ドリンク", zh: "土耳其烤肉, 饮料", es: "Kebab, Bebidas" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=590' },
+                { id: 'la_paloma', name: { en: "La Paloma(Raracost)", ja: "ラ・パロマ(ララコスト)", zh: "La Paloma(Raracost)", es: "La Paloma(Raracost)" }, menu: { en: "Steak, Pasta, Pilaf", ja: "ステーキ、パスタ、ピラフ", zh: "牛排, 意大利面, 抓饭", es: "Bistec, Pasta, Pilaf" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=581' },
+                { id: 'quiznos', name: { en: "Quiznos", ja: "クイズノス", zh: "Quiznos", es: "Quiznos" }, menu: { en: "Sub Sandwiches, Salad, Soup", ja: "サブマリンサンドイッチ、サラダ、スープ", zh: "潜水艇三明治, 沙拉, 汤", es: "Sándwiches submarinos, Ensalada, Sopa" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=586' },
+                { id: 'm_table', name: { en: "M-table", ja: "Mテーブル", zh: "M-table", es: "M-table" }, menu: { en: "Hawaiian Casual, Food Court", ja: "ハワイアンカジュアル、フードコート", zh: "夏威夷休闲, 美食广场", es: "Casual hawaiano, Patio de comidas" }, location: 'Adventure 3F', remarks: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=577' },
+                { id: 'fairy_tale_pizza', name: { en: "Fairy Tale(Domino's Pizza)", ja: "フェアリーテール(ドミノピザ)", zh: "童话(达美乐披萨)", es: "Cuento de Hadas(Domino's Pizza)" }, menu: { en: "Pizza, Pasta", ja: "ピザ、パスタ", zh: "披萨, 意大利面", es: "Pizza, Pasta" }, location: 'Adventure B1F (Underland)', remarks: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=575' },
+                { id: 'ogres_factory', name: { en: "Ogre's Factory(Lotteria)", ja: "オーガの工場(ロッテリア)", zh: "食人魔工厂(乐天利)", es: "Fábrica de Ogros(Lotteria)" }, menu: { en: "Burgers, Chicken, Snacks", ja: "ハンバーガー、チキン、スナック", zh: "汉堡, 炸鸡, 小吃", es: "Hamburguesas, Pollo, Bocadillos" }, location: 'Adventure B1F (Underland)', remarks: 'remark_group_dining', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=220' },
+                { id: 'chalet_cafe', name: { en: "Chalet Café(BBQ Village)", ja: "シャレーカフェ(BBQビレッジ)", zh: "小木屋咖啡(BBQ村)", es: "Chalet Café(BBQ Village)" }, menu: { en: "Fried chicken, Pizza, Beer", ja: "フライドチキン、ピザ、ビール", zh: "炸鸡, 披萨, 啤酒", es: "Pollo frito, Pizza, Cerveza" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=648' },
+                { id: 'lake_view', name: { en: "Lake View(Mad For Garlic)", ja: "レイクビュー(マッドフォーガーリック)", zh: "湖景(Mad For Garlic)", es: "Lake View(Mad For Garlic)" }, menu: { en: "Chicken, sausage", ja: "チキン、ソーセージ", zh: "鸡肉, 香肠", es: "Pollo, salchicha" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=225' },
+                { id: 'kfc', name: { en: "KFC", ja: "KFC", zh: "肯德基", es: "KFC" }, menu: { en: "Burgers, Chicken", ja: "ハンバーガー、チキン", zh: "汉堡, 炸鸡", es: "Hamburguesas, Pollo" }, location: 'Outside the Park 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=609' },
+                { id: 'spontini', name: { en: "Spontini", ja: "スポンティーニ", zh: "Spontini", es: "Spontini" }, menu: { en: "Slice Pizza", ja: "スライスピザ", zh: "切片披萨", es: "Pizza en porciones" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=615' },
+            ]
+        },
+        'snack': {
+            list: [
+                { id: 'arabian_bazzar', name: { en: "Arabian Bazzar", ja: "アラビアンバザール", zh: "阿拉伯市场", es: "Bazar Árabe" }, menu: { en: "Snacks", ja: "スナック", zh: "小吃", es: "Bocadillos" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=573' },
+                { id: 'chilling_station', name: { en: "Chilling Station", ja: "チリングステーション", zh: "清凉站", es: "Estación de Relajación" }, menu: { en: "Mexican, Churros", ja: "メキシカン、チュロス", zh: "墨西哥菜, 吉事果", es: "Mexicana, Churros" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=676' },
+                { id: 'flyv_snack', name: { en: "Fly-V Snack", ja: "フライVスナック", zh: "Fly-V 小吃", es: "Fly-V Snack" }, menu: { en: "Popcorn, Fruit Slush", ja: "ポップコーン、フルーツスラッシュ", zh: "爆米花, 水果冰沙", es: "Palomitas de maíz, Granizado de frutas" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=675' },
+                { id: 'merry_go_round_snack', name: { en: "Merry-go-round", ja: "メリーゴーランドスナック", zh: "旋转木马小吃", es: "Carrusel" }, menu: { en: "Butter-grilled Squid, Corns", ja: "イカのバター焼き、とうもろこし", zh: "黄油烤鱿鱼, 玉米", es: "Calamares a la parrilla con mantequilla, Maíz" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=672' },
+                { id: 'omars_delight', name: { en: "Omar's Delight", ja: "オマールの喜び", zh: "奥马尔的喜悦", es: "Delicia de Omar" }, menu: { en: "Oreo Churros, Milkshake", ja: "オレオチュロス、ミルクシェイク", zh: "奥利奥吉事果, 奶昔", es: "Churros Oreo, Batido" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=682' },
+                { id: 'popcorn_factory', name: { en: "Popcorn Factory", ja: "ポップコーン工場", zh: "爆米花工厂", es: "Fábrica de Palomitas de Maíz" }, menu: { en: "Popcorn", ja: "ポップコーン", zh: "爆米花", es: "Palomitas de maíz" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=633' },
+                { id: 'snack_san_jose', name: { en: "Snack San Jose", ja: "スナック・サンホセ", zh: "圣何塞小吃", es: "Snack San José" }, menu: { en: "Churros, Grilled sausage, Hot dog", ja: "チュロス、焼きソーセージ、ホットドッグ", zh: "吉事果, 烤香肠, 热狗", es: "Churros, Salchicha a la parrilla, Perrito caliente" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=574' },
+                { id: 'sweety_box', name: { en: "Sweety Box", ja: "スウィーティーボックス", zh: "甜蜜盒子", es: "Caja Dulce" }, menu: { en: "Cotton Candy", ja: "綿菓子", zh: "棉花糖", es: "Algodón de azúcar" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=651' },
+                { id: 'treebles_snack', name: { en: "Treeble's Snack", ja: "トリーブルのスナック", zh: "Treeble的小吃", es: "Bocadillo de Treeble" }, menu: { en: "Churros, Slush, Character snacks", ja: "チュロス、スラッシュ、キャラクタースナック", zh: "吉事果, 冰沙, 角色小吃", es: "Churros, Granizado, Bocadillos de personajes" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=613' },
+                { id: 'auntie_annes', name: { en: "Auntie Anne's", ja: "アンティ・アンズ", zh: "安妮阿姨", es: "Auntie Anne's" }, menu: { en: "Pretzels, Hot dog, Coffee", ja: "プレッツェル、ホットドッグ、コーヒー", zh: "椒盐卷饼, 热狗, 咖啡", es: "Pretzels, Perrito caliente, Café" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=589' },
+                { id: 'deli_bon', name: { en: "Deli BON", ja: "デリボン", zh: "Deli BON", es: "Deli BON" }, menu: { en: "French Fries, Waffle, Smoothie", ja: "フライドポテト、ワッフル、スムージー", zh: "炸薯条, 华夫饼, 冰沙", es: "Papas fritas, Gofre, Batido" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=593' },
+                { id: 'jungle_snack', name: { en: "Jungle Snack", ja: "ジャングルスナック", zh: "丛林小吃", es: "Bocadillo de la Selva" }, menu: { en: "Buttered corn, Coffee, Ice cream", ja: "バターコーン、コーヒー、アイスクリーム", zh: "黄油玉米, 咖啡, 冰淇淋", es: "Maíz con mantequilla, Café, Helado" }, location: 'Adventure 3F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=591' },
+                { id: 'obelisk_snack', name: { en: "Obelisk", ja: "オベリスクスナック", zh: "方尖碑小吃", es: "Obelisco" }, menu: { en: "Waffle, Sausage", ja: "ワッフル、ソーセージ", zh: "华夫饼, 香肠", es: "Gofre, Salchicha" }, location: 'Adventure 4F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=579' },
+                { id: 'pharaoh_snack', name: { en: "Pharaoh Snack", ja: "ファラオスナック", zh: "法老小吃", es: "Bocadillo del Faraón" }, menu: { en: "Tteokbokki, Waffle, Churros", ja: "トッポッキ、ワッフル、チュロス", zh: "炒年糕, 华夫饼, 吉事果", es: "Tteokbokki, Gofre, Churros" }, location: 'Adventure 4F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=580' },
+                { id: 'sphinx_snack', name: { en: "Sphinx Snack(New York Hotdog)", ja: "スフィンクススナック(ニューヨークホットドッグ)", zh: "狮身人面像小吃(纽约热狗)", es: "Bocadillo de la Esfinge(New York Hotdog)" }, menu: { en: "Hotdogs, Drinks", ja: "ホットドッグ、ドリンク", zh: "热狗, 饮料", es: "Perritos calientes, Bebidas" }, location: 'Adventure 4F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=232' },
+                { id: 'churrovic', name: { en: "Churrovic", ja: "チュロビック", zh: "Churrovic", es: "Churrovic" }, menu: { en: "Churros, Hot Chocolate", ja: "チュロス、ホットチョコレート", zh: "吉事果, 热巧克力", es: "Churros, Chocolate caliente" }, location: 'Adventure B1F (Underland)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=576' },
+                { id: 'bhc_pop_ice', name: { en: "bhc pop", ja: "bhcポップ", zh: "bhc pop", es: "bhc pop" }, menu: { en: "Colpop(Chicken nuggets with coke)", ja: "コルポップ(チキンナゲットとコーラ)", zh: "可乐鸡块", es: "Colpop (nuggets de pollo con coca-cola)" }, location: 'Outside the Park B3F (Ice Garden)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=702' },
+                { id: 'cabin_tales', name: { en: "Cabin Tales", ja: "キャビンテイルズ", zh: "小屋故事", es: "Cuentos de Cabaña" }, menu: { en: "Churros, Sausage, Drinks", ja: "チュロス、ソーセージ、ドリンク", zh: "吉事果, 香肠, 饮料", es: "Churros, Salchicha, Bebidas" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=644' },
+                { id: 'candy_castle', name: { en: "Candy Castle", ja: "キャンディキャッスル", zh: "糖果城堡", es: "Castillo de Caramelo" }, menu: { en: "Gyro Churros, Ttukbokki(spicy rice cake), French fries", ja: "ジャイロチュロス、トッポッキ、フライドポテト", zh: "陀螺吉事果, 炒年糕, 炸薯条", es: "Churros Gyro, Tteokbokki, Papas fritas" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=681' },
+                { id: 'fruits_world', name: { en: "Fruits World", ja: "フルーツワールド", zh: "水果世界", es: "Mundo de Frutas" }, menu: { en: "Fruit juice, Buttered corn, Slush", ja: "フルーツジュース、バターコーン、スラッシュ", zh: "果汁, 黄油玉米, 冰沙", es: "Zumo de fruta, Maíz con mantequilla, Granizado" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=645' },
+                { id: 'giant_snack', name: { en: "Giant Snack", ja: "ジャイアントスナック", zh: "巨人小吃", es: "Bocadillo Gigante" }, menu: { en: "Giant Chicken Legs, Snacks", ja: "ジャイアントチキンレッグ、スナック", zh: "巨型鸡腿, 小吃", es: "Muslos de pollo gigantes, Bocadillos" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=694' },
+                { id: 'gyro_snack', name: { en: "Gyro Snack", ja: "ジャイロスナック", zh: "陀螺小吃", es: "Bocadillo Gyro" }, menu: { en: "Chicken skewers, Snow Ice", ja: "チキン串、かき氷", zh: "鸡肉串, 雪花冰", es: "Brochetas de pollo, Hielo raspado" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=712' },
+                { id: 'magical_cart', name: { en: "Magical Cart", ja: "マジカルカート", zh: "魔法推车", es: "Carrito Mágico" }, menu: { en: "Snacks, Drinks", ja: "スナック、ドリンク", zh: "小吃, 饮料", es: "Bocadillos, Bebidas" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=692' },
+                { id: 'victoria_bhc', name: { en: "Victoria(bhc pop)", ja: "ビクトリア(bhcポップ)", zh: "维多利亚(bhc pop)", es: "Victoria(bhc pop)" }, menu: { en: "Colpop(Chicken nuggets with coke)", ja: "コルポップ(チキンナゲットとコーラ)", zh: "可乐鸡块", es: "Colpop (nuggets de pollo con coca-cola)" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=698' },
+                { id: 'waffle_university', name: { en: "Waffle University", ja: "ワッフル大学", zh: "华夫大学", es: "Universidad del Gofre" }, menu: { en: "Korean style Waffle", ja: "韓国風ワッフル", zh: "韩式华夫饼", es: "Gofre al estilo coreano" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=687' },
+                { id: 'bakudanyaki', name: { en: "Bakudanyaki", ja: "爆弾焼き", zh: "爆弹烧", es: "Bakudanyaki" }, menu: { en: "Big sized takoyaki", ja: "特大たこ焼き", zh: "大号章鱼烧", es: "Takoyaki de gran tamaño" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=700' },
+                { id: 'mochi_story', name: { en: "Mochi Story", ja: "もち物語", zh: "麻糬故事", es: "Historia del Mochi" }, menu: { en: "Fruit Mochi", ja: "フルーツ大福", zh: "水果麻糬", es: "Mochi de frutas" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=622' },
+                { id: 'yoonsoop_fruit_sand', name: { en: "Yoonsoop Fruit Sand", ja: "ユンスプフルーツサンド", zh: "Yoonsoop 水果三明治", es: "Sándwich de Frutas Yoonsoop" }, menu: { en: "Fruit Sandwich, Dacquoise", ja: "フルーツサンド、ダックワーズ", zh: "水果三明治, 达克瓦兹", es: "Sándwich de frutas, Dacquoise" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=707' },
+            ]
+        },
+        'cafe': {
+            list: [
+                 { id: 'beat_box', name: { en: "Beat Box", ja: "ビートボックス", zh: "Beat Box", es: "Beat Box" }, menu: { en: "Coffee made by robot", ja: "ロボットが淹れるコーヒー", zh: "机器人制作的咖啡", es: "Café hecho por robot" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=677' },
+                 { id: 'cafe_ariana', name: { en: "Cafe Ariana(A Twosome Place)", ja: "カフェアリアナ(A Twosome Place)", zh: "阿里安娜咖啡馆(A Twosome Place)", es: "Café Ariana(A Twosome Place)" }, menu: { en: "Coffee, Soft drinks", ja: "コーヒー、ソフトドリンク", zh: "咖啡, 软饮料", es: "Café, Refrescos" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=257' },
+                 { id: 'louies_cow_town', name: { en: "Louie's Cow Town(Pasteur Milk Bar)", ja: "ルイのカウタウン(パスツールミルクバー)", zh: "路易的牛镇(巴氏杀菌牛奶吧)", es: "Pueblo de Vacas de Louie(Pasteur Milk Bar)" }, menu: { en: "Ice cream, Milkshake, Yogurt", ja: "アイスクリーム、ミルクシェイク、ヨーグルト", zh: "冰淇淋, 奶昔, 酸奶", es: "Helado, Batido, Yogur" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=623' },
+                 { id: 'paul_bassett_adv1f', name: { en: "Paul Bassett", ja: "ポール・バセット", zh: "Paul Bassett", es: "Paul Bassett" }, menu: { en: "Coffee, Specialty Coffee", ja: "コーヒー、スペシャルティコーヒー", zh: "咖啡, 精品咖啡", es: "Café, Café de especialidad" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=634' },
+                 { id: 'sanjose_bhc', name: { en: "San Jose(bhc pop)", ja: "サンホセ(bhcポップ)", zh: "圣何塞(bhc pop)", es: "San José(bhc pop)" }, menu: { en: "Colpop(Chicken nuggets with coke)", ja: "コルポップ(チキンナゲットとコーラ)", zh: "可乐鸡块", es: "Colpop (nuggets de pollo con coca-cola)" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=654' },
+                 { id: 'treeble_house', name: { en: "Treeble House(Sulbing)", ja: "トリーブルハウス(ソルビン)", zh: "Treeble之家(雪冰)", es: "Casa de Treeble(Sulbing)" }, menu: { en: "Korean desserts, Bingsu(shaved ice)", ja: "韓国デザート、ピンス(かき氷)", zh: "韩式甜点, 刨冰", es: "Postres coreanos, Bingsu (hielo raspado)" }, location: 'Adventure 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=596' },
+                 { id: 'gongcha_adv2f', name: { en: "Gong Cha", ja: "ゴンチャ", zh: "贡茶", es: "Gong Cha" }, menu: { en: "Bubble Tea", ja: "タピオカティー", zh: "珍珠奶茶", es: "Té de burbujas" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=241' },
+                 { id: 'ice_factory', name: { en: "Ice Factory", ja: "アイスファクトリー", zh: "冰工厂", es: "Fábrica de Hielo" }, menu: { en: "Ice candy", ja: "アイスキャンディー", zh: "冰棒", es: "Paleta de hielo" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=592' },
+                 { id: 'jamba_juice', name: { en: "Jamba Juice", ja: "ジャンバジュース", zh: "Jamba Juice", es: "Jamba Juice" }, menu: { en: "Smoothies, Fresh Juice", ja: "スムージー、フレッシュジュース", zh: "冰沙, 鲜榨果汁", es: "Batidos, Zumo fresco" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=630' },
+                 { id: 'rhine_cart', name: { en: "Rhine Cart(Snack Bar)", ja: "ラインカート(スナックバー)", zh: "莱茵推车(小吃吧)", es: "Carrito del Rin(Snack Bar)" }, menu: { en: "Churros, Gelato", ja: "チュロス、ジェラート", zh: "吉事果, 意式冰淇淋", es: "Churros, Gelato" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=714' },
+                 { id: 'wien_strudel', name: { en: "Wien Strudel", ja: "ウィーンシュトルーデル", zh: "维也纳果馅卷", es: "Strudel de Viena" }, menu: { en: "Soft Ice Cream, Gelato", ja: "ソフトクリーム、ジェラート", zh: "软冰淇淋, 意式冰淇淋", es: "Helado suave, Gelato" }, location: 'Adventure 2F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=711' },
+                 { id: 'beat_coffee_adv3f', name: { en: "Beat Coffee", ja: "ビートコーヒー", zh: "Beat Coffee", es: "Beat Coffee" }, menu: { en: "Coffee made by robot", ja: "ロボットが淹れるコーヒー", zh: "机器人制作的咖啡", es: "Café hecho por robot" }, location: 'Adventure 3F (Korean Traditional Restaurants)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=625' },
+                 { id: 'daldal_dessert', name: { en: "DALDAL Dessert Market", ja: "ダルダルデザートマーケット", zh: "DALDAL 甜点市场", es: "Mercado de Postres DALDAL" }, menu: { en: "Korean Desserts, Ice cream", ja: "韓国デザート、アイスクリーム", zh: "韩式甜点, 冰淇淋", es: "Postres coreanos, Helado" }, location: 'Adventure 3F (Korean Traditional Restaurants)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=660' },
+                 { id: 'paul_bassett_ice', name: { en: "Paul Bassett", ja: "ポール・バセット", zh: "Paul Bassett", es: "Paul Bassett" }, menu: { en: "Coffee, Specialty Coffee", ja: "コーヒー、スペシャルティコーヒー", zh: "咖啡, 精品咖啡", es: "Café, Café de especialidad" }, location: 'Outside the Park B3F (Ice Garden)', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=578' },
+                 { id: 'atwosome_mi', name: { en: "A Twosome Place", ja: "A Twosome Place", zh: "A Twosome Place", es: "A Twosome Place" }, menu: { en: "Coffee, Drinks, Dessert", ja: "コーヒー、ドリンク、デザート", zh: "咖啡, 饮料, 甜点", es: "Café, Bebidas, Postre" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=568' },
+                 { id: 'gongcha_mi', name: { en: "Gong Cha", ja: "ゴンチャ", zh: "贡茶", es: "Gong Cha" }, menu: { en: "Bubble Tea", ja: "タピオカティー", zh: "珍珠奶茶", es: "Té de burbujas" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=683' },
+                 { id: 'magic_truck', name: { en: "Magic Truck(Milky)", ja: "マジックトラック(ミルキー)", zh: "魔法卡车(Milky)", es: "Camión Mágico(Milky)" }, menu: { en: "Ice Cream, Yogurt", ja: "アイスクリーム、ヨーグルト", zh: "冰淇淋, 酸奶", es: "Helado, Yogur" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=635' },
+                 { id: 'salzpan_gelato', name: { en: "Salzpan Gelato", ja: "サルツパンジェラート", zh: "Salzpan Gelato", es: "Salzpan Gelato" }, menu: { en: "Salzpan Gelato(Salt bread ice cream sandwich)", ja: "塩パンジェラートサンド", zh: "盐面包冰淇淋三明治", es: "Sándwich de helado de pan de sal" }, location: 'Magic Island', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=629' },
+                 { id: 'atwosome_out1f', name: { en: "A Twosome Place", ja: "A Twosome Place", zh: "A Twosome Place", es: "A Twosome Place" }, menu: { en: "Dessert, Coffee", ja: "デザート、コーヒー", zh: "甜点, 咖啡", es: "Postre, Café" }, location: 'Outside the Park 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=643' },
+                 { id: 'mega_coffee', name: { en: "Mega Coffee", ja: "メガコーヒー", zh: "Mega Coffee", es: "Mega Coffee" }, menu: { en: "Big Size Coffee, Drinks", ja: "ビッグサイズコーヒー、ドリンク", zh: "大杯咖啡, 饮料", es: "Café de gran tamaño, Bebidas" }, location: 'Outside the Park 1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=588' },
+                 { id: 'bellongte', name: { en: "Bellongte", ja: "ベロンテ", zh: "Bellongte", es: "Bellongte" }, menu: { en: "Ice cream, Pudding", ja: "アイスクリーム、プリン", zh: "冰淇淋, 布丁", es: "Helado, Pudin" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=708' },
+                 { id: 'dangdo', name: { en: "Dangdo", ja: "ダンド", zh: "Dangdo", es: "Dangdo" }, menu: { en: "Handmade Gelato", ja: "手作りジェラート", zh: "手工意式冰淇淋", es: "Gelato artesanal" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=611' },
+                 { id: 'fulolli', name: { en: "Fulolli", ja: "フロリ", zh: "Fulolli", es: "Fulolli" }, menu: { en: "Vegan gelato", ja: "ヴィーガンジェラート", zh: "素食意式冰淇淋", es: "Gelato vegano" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=664' },
+                 { id: 'gongcha_outb1', name: { en: "Gong Cha", ja: "ゴンチャ", zh: "贡茶", es: "Gong Cha" }, menu: { en: "Bubble Tea", ja: "タピオカティー", zh: "珍珠奶茶", es: "Té de burbujas" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=606' },
+                 { id: 'whosfan_cafe', name: { en: "Whosfan Cafe & Store", ja: "フーズファンカフェ＆ストア", zh: "Whosfan 咖啡店 & 商店", es: "Whosfan Cafe & Store" }, menu: { en: "K-pop themed café", ja: "K-POPテーマカフェ", zh: "K-pop主题咖啡店", es: "Cafetería temática de K-pop" }, location: 'Outside the Park B1F', url: 'https://adventure.lotteworld.com/eng/enjoy/restaurant/view.do?detailsKey=696' },
+            ]
+        }
+    };
+    const shopData = {
+        'experience': {
+            list: [
+                { id: 'sharoncat_dress', name: { en: "SharonCat Dress", ja: "シャロンキャットドレス", zh: "夏洛猫礼服店", es: "Vestido SharonCat" }, menu: { en: "Dress rental & makeup service, Parade experience package", ja: "ドレスレンタル＆メイクサービス、パレード体験パッケージ", zh: "礼服租赁和化妆服务, 游行体验套餐", es: "Alquiler de vestidos y servicio de maquillaje, Paquete de experiencia de desfile" }, location: "Adventure 1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=246" },
+                { id: 'a_photo_shop', name: { en: "A Photo Shop", ja: "Aフォトショップ", zh: "A Photo Shop", es: "A Photo Shop" }, menu: { en: "Photo print service", ja: "写真プリントサービス", zh: "照片打印服务", es: "Servicio de impresión de fotos" }, location: "Adventure 1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=128" },
+                { id: 'acorn_caricature', name: { en: "Acorn Caricature", ja: "どんぐりカリカチュア", zh: "橡果漫画", es: "Caricatura de Bellota" }, menu: { en: "Caricature drawing", ja: "似顔絵", zh: "漫画绘画", es: "Dibujo de caricaturas" }, location: "Adventure 1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=289" },
+                { id: 'pixie_magic', name: { en: "Pixie Magic", ja: "ピクシーマジック", zh: "精灵魔法", es: "Magia de Duendecillo" }, menu: { en: "School uniform rental", ja: "制服レンタル", zh: "校服租赁", es: "Alquiler de uniformes escolares" }, location: "Adventure B1F (Underland)", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=254" },
+                { id: 'sharoncat_lounge', name: { en: "SharonCat Premium Lounge", ja: "シャロンキャットプレミアムラウンジ", zh: "夏洛猫高级休息室", es: "Salón Premium SharonCat" }, menu: { en: "Dress rental & makeup service, Parade experience package", ja: "ドレスレンタル＆メイクサービス、パレード体験パッケージ", zh: "礼服租赁和化妆服务, 游行体验套餐", es: "Alquiler de vestidos y servicio de maquillaje, Paquete de experiencia de desfile" }, location: "Adventure B1F (Underland)", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=247" },
+                { id: 'bonita_cut', name: { en: "BONITA(Life 4 Cut)", ja: "BONITA(人生4カット)", zh: "BONITA(人生四格)", es: "BONITA(Life 4 Cut)" }, menu: { en: "Photo booth", ja: "フォトブース", zh: "照相亭", es: "Fotomatón" }, location: "Adventure 2F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=251" },
+                { id: 'aventura_tarot', name: { en: "Aventura Tarot Card", ja: "アベンチュラタロットカード", zh: "Aventura 塔罗牌", es: "Carta del Tarot Aventura" }, menu: { en: "Tarot reading", ja: "タロット占い", zh: "塔罗牌占卜", es: "Lectura del tarot" }, location: "Adventure 2F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=249" },
+                { id: 'rooftop_gallery', name: { en: "Rooftop Gallery", ja: "屋上ギャラリー", zh: "屋顶画廊", es: "Galería en la Azotea" }, menu: { en: "Exhibition, Goods, Caricature drawing", ja: "展示、グッズ、似顔絵", zh: "展览, 商品, 漫画绘画", es: "Exposición, Artículos, Dibujo de caricaturas" }, location: "Adventure 4F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=291" },
+                { id: 'fun_city', name: { en: "Fun City", ja: "ファンシティ", zh: "欢乐城", es: "Fun City" }, menu: { en: "Game arcade", ja: "ゲームセンター", zh: "游戏厅", es: "Sala de juegos" }, location: "Outside the Park B3F (Ice Garden)", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=292" },
+                { id: 'le_vivant', name: { en: "Le VIVANT", ja: "ル・ヴィヴァン", zh: "Le VIVANT", es: "Le VIVANT" }, menu: { en: "Hair salon", ja: "ヘアサロン", zh: "美发沙龙", es: "Peluquería" }, location: "Outside the Park B3F (Ice Garden)", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=296" },
+                { id: 'ceragem_welipark', name: { en: "CERAGEM Wellpark", ja: "セラゼムウェルパーク", zh: "CERAGEM Wellpark", es: "CERAGEM Wellpark" }, menu: { en: "Indoor playground, Healthcare, Cafe", ja: "屋内遊び場、ヘルスケア、カフェ", zh: "室内游乐场, 保健, 咖啡馆", es: "Parque infantil cubierto, Cuidado de la salud, Cafetería" }, location: "Outside the Park B3F (Ice Garden)", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=295" },
+                { id: 'gamsung_gyobok', name: { en: "Gamsung Gyobok", ja: "感性制服", zh: "感性校服", es: "Gamsung Gyobok" }, menu: { en: "School uniform rental", ja: "制服レンタル", zh: "校服租赁", es: "Alquiler de uniformes escolares" }, location: "Outside the Park B1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=242" },
+                { id: 'booth_luck', name: { en: "BOOTH LUCK", ja: "ブースラック", zh: "BOOTH LUCK", es: "BOOTH LUCK" }, menu: { en: "Character goods, Costume rental, Photo booth", ja: "キャラクターグッズ、衣装レンタル、フォトブース", zh: "角色商品, 服装租赁, 照相亭", es: "Artículos de personajes, Alquiler de disfraces, Fotomatón" }, location: "Outside the Park B1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=268" },
+                { id: 'cheez_n_shot', name: { en: "Cheez N Shot", ja: "チーズアンドショット", zh: "Cheez N Shot", es: "Cheez N Shot" }, menu: { en: "Photo booth", ja: "フォトブース", zh: "照相亭", es: "Fotomatón" }, location: "Outside the Park B1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=252" }
+            ]
+        },
+        'gift-shop': {
+            list: [
+                { id: 'lottys_emporium', name: { en: "Lotty's Emporium", ja: "ロッティーズエンポリアム", zh: "乐蒂商场", es: "Emporio de Lotty" }, menu: { en: "Toys, Accessories, Apparel, Collectibles, Gift & Housewares", ja: "おもちゃ、アクセサリー、アパレル、コレクターズアイテム、ギフト＆家庭用品", zh: "玩具, 配饰, 服装, 收藏品, 礼品和家居用品", es: "Juguetes, Accesorios, Ropa, Coleccionables, Regalos y Artículos para el hogar" }, location: "Adventure 1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=136" },
+                { id: 'sweet_world', name: { en: "Sweet World(Weeny Beeny)", ja: "スイートワールド(ウィニービーニー)", zh: "甜蜜世界(Weeny Beeny)", es: "Mundo Dulce(Weeny Beeny)" }, menu: { en: "Candy, Jelly, Chocolates", ja: "キャンディー、ゼリー、チョコレート", zh: "糖果, 果冻, 巧克力", es: "Caramelos, Gelatinas, Chocolates" }, location: "Adventure 1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=248" },
+                { id: 'bellys_gift_shop', name: { en: "Belly's Gift Shop", ja: "ベリーのギフトショップ", zh: "贝莉的礼品店", es: "Tienda de Regalos de Belly" }, menu: { en: "Character goods(Belly)", ja: "キャラクターグッズ(ベリー)", zh: "角色商品(贝莉)", es: "Artículos de personajes (Belly)" }, location: "Adventure 1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=301" },
+                { id: 'toy_plus', name: { en: "Toy Plus", ja: "トイプラス", zh: "玩具+", es: "Toy Plus" }, menu: { en: "Character goods", ja: "キャラクターグッズ", zh: "角色商品", es: "Artículos de personajes" }, location: "Adventure 1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=130" },
+                { id: 'fantasy_gift_shop_b1', name: { en: "Fantasy Gift Shop", ja: "ファンタジーギフトショップ", zh: "幻想礼品店", es: "Tienda de Regalos de Fantasía" }, menu: { en: "Toys, Accessories, Apparel, Collectibles, Gift & Housewares", ja: "おもちゃ、アクセサリー、アパレル、コレクターズアイテム、ギフト＆家庭用品", zh: "玩具, 配饰, 服装, 收藏品, 礼品和家居用品", es: "Juguetes, Accesorios, Ropa, Coleccionables, Regalos y Artículos para el hogar" }, location: "Adventure B1F (Underland)", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=135" },
+                { id: 'el_prado', name: { en: "El Prado(168cm)", ja: "エル・プラド(168cm)", zh: "El Prado(168cm)", es: "El Prado(168cm)" }, menu: { en: "Phone accessories", ja: "携帯アクセサリー", zh: "手机配件", es: "Accesorios para teléfonos" }, location: "Adventure 2F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=240" },
+                { id: 'sweet_zone', name: { en: "Sweet Zone(Weeny Beeny)", ja: "スイートゾーン(ウィニービーニー)", zh: "甜蜜地带(Weeny Beeny)", es: "Zona Dulce(Weeny Beeny)" }, menu: { en: "Candy, Jelly, Chocolates", ja: "キャンディー、ゼリー、チョコレート", zh: "糖果, 果冻, 巧克力", es: "Caramelos, Gelatinas, Chocolates" }, location: "Adventure 2F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=124" },
+                { id: 'hello_kitty_shop', name: { en: "Gift Shop(Hello Kitty)", ja: "ギフトショップ(ハローキティ)", zh: "礼品店(Hello Kitty)", es: "Tienda de Regalos(Hello Kitty)" }, menu: { en: "Character goods(Hello Kitty)", ja: "キャラクターグッズ(ハローキティ)", zh: "角色商品(Hello Kitty)", es: "Artículos de personajes (Hello Kitty)" }, location: "Adventure 4F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=241" },
+                { id: 'magic_castle_treasures', name: { en: "Magic Castle Treasures", ja: "マジックキャッスルトレジャー", zh: "魔法城堡宝藏", es: "Tesoros del Castillo Mágico" }, menu: { en: "Toys, Accessories, Apparel, Collectibles, Gift & Housewares", ja: "おもちゃ、アクセサリー、アパレル、コレクターズアイテム、ギフト＆家庭用品", zh: "玩具, 配饰, 服装, 收藏品, 礼品和家居用品", es: "Juguetes, Accesorios, Ropa, Coleccionables, Regalos y Artículos para el hogar" }, location: "Magic Island", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=265" },
+                { id: 'gashapon_bandai', name: { en: "Gashapon Bandai Official Shop", ja: "ガシャポンバンダイオフィシャルショップ", zh: "万代扭蛋官方商店", es: "Tienda Oficial Gashapon Bandai" }, menu: { en: "Character goods(Gacha)", ja: "キャラクターグッズ(ガチャ)", zh: "角色商品(扭蛋)", es: "Artículos de personajes (Gacha)" }, location: "Outside the Park B1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=288" },
+                { id: 'butter_shop', name: { en: "BUTTER", ja: "BUTTER", zh: "BUTTER", es: "BUTTER" }, menu: { en: "Toys, Accessories, Apparel, Collectibles, Gift & Housewares", ja: "おもちゃ、アクセサリー、アパレル、コレクターズアイテム、ギフト＆家庭用品", zh: "玩具, 配饰, 服装, 收藏品, 礼品和家居用品", es: "Juguetes, Accesorios, Ropa, Coleccionables, Regalos y Artículos para el hogar" }, location: "Outside the Park B1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=258" },
+                { id: 'olens', name: { en: "OLENS", ja: "OLENS", zh: "OLENS", es: "OLENS" }, menu: { en: "Contact lenses", ja: "コンタクトレンズ", zh: "隐形眼镜", es: "Lentes de contacto" }, location: "Outside the Park B1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=250" },
+                { id: 'animate_shop', name: { en: "Animate", ja: "アニメイト", zh: "Animate", es: "Animate" }, menu: { en: "Anime goods, Books, Figures, Albums", ja: "アニメグッズ、書籍、フィギュア、アルバム", zh: "动漫商品, 书籍, 手办, 专辑", es: "Artículos de anime, Libros, Figuras, Álbumes" }, location: "Outside the Park B1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=304" },
+                { id: 'topten_kids', name: { en: "TOPTEN KIDS", ja: "TOPTEN KIDS", zh: "TOPTEN KIDS", es: "TOPTEN KIDS" }, menu: { en: "Kids apparel & accessories", ja: "子供服＆アクセサリー", zh: "儿童服装和配饰", es: "Ropa y accesorios para niños" }, location: "Outside the Park B1F", url: "https://adventure.lotteworld.com/eng/enjoy/giftshop/view.do?detailsKey=260" }
+            ]
+        }
+    };
+    
+    const translations = {
+        en: {
+            header_title: "Lotte World Adventure Guests' Guide", header_subtitle: "Enjoy the best tastes, cute merchandise, and special experiences in the land of adventure and mystery!",
+            seasonal_title: "Seasonal Specials", food_title: "Food & Restaurants", food_cat_korean_asian_title: "Korean & Asian", food_cat_korean_asian_desc: "From sizzling Bibimbap to savory noodles, dive into the heart of Seoul's vibrant flavors.", food_cat_western_title: "Western", food_cat_western_desc: "Craving a classic? Get your fix of juicy burgers, cheesy pizzas, and perfect pasta.", food_cat_snack_title: "Snack", food_cat_snack_desc: "Churros, popcorn, and other quick, fun bites.", food_cat_cafe_title: "Cafe", food_cat_cafe_desc: "Coffee, tea, and sweet desserts for a relaxing break.",
+            shop_title: "Gift & Merchandise", shop_cat_experience_title: "Experience", shop_cat_experience_desc: "Unique experiences like dress rentals, photo booths, and arcades.", shop_cat_gift_shop_title: "Gift Shop", shop_cat_gift_shop_desc: "Find character goods, apparel, toys, and souvenirs.",
+            back_button: "Back", location_label: "Location", remark_group_dining: "Group dining available",
+            footer_rights: "&copy; 2025 Lotte World. All Rights Reserved.", footer_enjoy: "Enjoy your magical day at Lotte World!"
+        },
+        ja: {
+            header_title: "ロッテワールドアドベンチャー お客様ガイド", header_subtitle: "冒険と神秘の国で、最高の味、かわいいグッズ、特別な体験を満喫してください！",
+            seasonal_title: "季節のスペシャル", food_title: "フード＆レストラン", food_cat_korean_asian_title: "韓国料理＆アジア料理", food_cat_korean_asian_desc: "熱々のビビンバから風味豊かな麺類まで、ソウルの活気ある味の中心を体験してください。", food_cat_western_title: "洋食", food_cat_western_desc: "定番が恋しいですか？ジューシーなハンバーガー、とろけるピザ、完璧なパスタをどうぞ。", food_cat_snack_title: "スナック", food_cat_snack_desc: "チュロス、ポップコーンなど、手軽で楽しい軽食。", food_cat_cafe_title: "カフェ", food_cat_cafe_desc: "リラックスした休憩のためのコーヒー、紅茶、甘いデザート。",
+            shop_title: "ギフト＆グッズ", shop_cat_experience_title: "体験", shop_cat_experience_desc: "ドレスレンタル、フォトブース、ゲームセンターなどのユニークな体験。", shop_cat_gift_shop_title: "ギフトショップ", shop_cat_gift_shop_desc: "キャラクターグッズ、アパレル、おもちゃ、お土産を見つけましょう。",
+            back_button: "戻る", location_label: "場所", remark_group_dining: "団体での食事が可能です",
+            footer_rights: "&copy; 2025 Lotte World. All Rights Reserved.", footer_enjoy: "ロッテワールドで魔法のような一日をお楽しみください！"
+        },
+        zh: {
+            header_title: "乐天世界探险游客指南", header_subtitle: "在充满冒险与神秘的国度，尽情享受最棒的美食、可爱的商品和特别的体验！",
+            seasonal_title: "季节特选", food_title: "餐饮与餐厅", food_cat_korean_asian_title: "韩式 & 亚洲", food_cat_korean_asian_desc: "从热气腾腾的石锅拌饭到美味的面条，沉浸在首尔充满活力的风味中心。", food_cat_western_title: "西式", food_cat_western_desc: "渴望经典美食？来这里享用多汁的汉堡、香浓的披萨和完美的意大利面。", food_cat_snack_title: "小吃", food_cat_snack_desc: "吉事果、爆米花和其他快捷有趣的小吃。", food_cat_cafe_title: "咖啡馆", food_cat_cafe_desc: "咖啡、茶和甜点，享受轻松一刻。",
+            shop_title: "礼品 & 商品", shop_cat_experience_title: "体验", shop_cat_experience_desc: "服装租赁、照相亭和游戏厅等独特体验。", shop_cat_gift_shop_title: "礼品店", shop_cat_gift_shop_desc: "寻找角色商品、服装、玩具和纪念品。",
+            back_button: "返回", location_label: "位置", remark_group_dining: "可团体用餐",
+            footer_rights: "&copy; 2025 乐天世界. 版权所有.", footer_enjoy: "祝您在乐天世界度过神奇的一天！"
+        },
+        es: {
+            header_title: "Guía para Huéspedes de Lotte World Adventure", header_subtitle: "¡Disfruta de los mejores sabores, productos adorables y experiencias especiales en la tierra de la aventura y el misterio!",
+            seasonal_title: "Especiales de Temporada", food_title: "Comida y Restaurantes", food_cat_korean_asian_title: "Coreana y Asiática", food_cat_korean_asian_desc: "Desde el chisporroteante Bibimbap hasta los sabrosos fideos, sumérgete en el corazón de los vibrantes sabores de Seúl.", food_cat_western_title: "Occidental", food_cat_western_desc: "¿Antojo de un clásico? Disfruta de jugosas hamburguesas, pizzas con queso y pasta perfecta.", food_cat_snack_title: "Bocadillos", food_cat_snack_desc: "Churros, palomitas de maíz y otros bocadillos rápidos y divertidos.", food_cat_cafe_title: "Cafetería", food_cat_cafe_desc: "Café, té y postres dulces para un descanso relajante.",
+            shop_title: "Regalos y Mercancía", shop_cat_experience_title: "Experiencias", shop_cat_experience_desc: "Experiencias únicas como alquiler de vestidos, fotomatones y salas de juegos.", shop_cat_gift_shop_title: "Tienda de Regalos", shop_cat_gift_shop_desc: "Encuentra artículos de personajes, ropa, juguetes y recuerdos.",
+            back_button: "Volver", location_label: "Ubicación", remark_group_dining: "Comidas para grupos disponibles",
+            footer_rights: "&copy; 2025 Lotte World. Todos los derechos reservados.", footer_enjoy: "¡Disfruta de tu día mágico en Lotte World!"
+        },
+    };
+
+    function showListView(data, titleKey) {
+        if (!data) return;
+
+        const lang = document.documentElement.lang;
+
+        const groupedByLocation = data.list.reduce((acc, item) => {
+            const locationText = item.location;
+            if (!acc[locationText]) {
+                acc[locationText] = [];
+            }
+            acc[locationText].push(item);
+            return acc;
+        }, {});
+        
+        const locationOrder = [
+            "Adventure 1F", "Adventure 2F", "Adventure 3F", "Adventure 4F",
+            "Adventure B1F (Underland)", "Magic Island", 
+            "Adventure 3F (Korean Traditional Restaurants)", "Outside the Park B1F",
+            "Outside the Park B3F (Ice Garden)", "Outside the Park 1F"
+        ];
+        
+        const sortedLocationKeys = locationOrder
+            .filter(locationKey => groupedByLocation.hasOwnProperty(locationKey));
+        
+        listHeader.innerHTML = `
+            <div class="flex items-center justify-between">
+                <button id="back-to-main" class="bg-gray-200 text-gray-700 font-semibold py-2 px-5 rounded-full hover:bg-gray-300 transition-all">&larr; ${getText('back_button')}</button>
+                <h2 class="text-4xl font-header font-bold text-gray-700 text-center">${getText(titleKey)}</h2>
+                <div class="w-24"></div>
+            </div>`;
+
+        listContainer.innerHTML = sortedLocationKeys.map(location => {
+            const storeCount = groupedByLocation[location].length;
+            return `
+            <div class="location-group border-b-2 pb-4">
+                 <button class="location-toggle-button w-full flex justify-between items-center text-left py-3 px-4 rounded-lg hover:bg-gray-100">
+                     <div class="flex items-center">
+                         <h3 class="text-2xl font-header font-semibold text-gray-600">${location}</h3>
+                         <span class="text-lg font-medium text-gray-500 ml-3">(${storeCount})</span>
+                     </div>
+                     <svg class="toggle-icon w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                 </button>
+                 <div class="location-content-grid hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+                    ${groupedByLocation[location].map(item => {
+                        const itemName = item.name?.[lang] || item.name?.['en'] || item.id;
+                        const itemMenu = item.menu?.[lang] || item.menu?.['en'] || 'Menu info not available';
+                        return `
+                        <a href="${item.url}" target="_blank" class="block bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-4 text-left">
+                            <h3 class="text-xl font-header font-bold text-gray-800 mb-2">${itemName}</h3>
+                            <p class="text-sm text-gray-500 mb-3">
+                                <strong>${getText('location_label')}:</strong> 
+                                <span>${item.location}</span>
+                            </p>
+                            <p class="text-base text-gray-700">${itemMenu}</p>
+                            ${item.remarks ? `<p class="mt-2 text-sm text-red-500 font-semibold">${getText(item.remarks)}</p>` : ''}
+                        </a>`
+                    }).join('')}
+                 </div>
+            </div>
+            `
+        }).join('');
+
+        document.querySelectorAll('.location-toggle-button').forEach(button => {
+            const firstGroupContent = document.querySelector('.location-content-grid');
+            if (firstGroupContent) {
+                firstGroupContent.classList.remove('hidden');
+                const firstIcon = firstGroupContent.previousElementSibling.querySelector('.toggle-icon');
+                if(firstIcon) firstIcon.classList.add('rotate-180');
+            }
+
+            button.addEventListener('click', () => {
+                const contentGrid = button.nextElementSibling;
+                const icon = button.querySelector('.toggle-icon');
+                contentGrid.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        mainView.classList.add('hidden');
+        listView.classList.remove('hidden');
+        window.scrollTo(0, 0);
+        document.getElementById('back-to-main').addEventListener('click', showMainView);
+    }
+    
+    function showMainView() {
+        listView.classList.add('hidden');
+        mainView.classList.remove('hidden');
+        window.scrollTo(0, 0);
+    }
+    
+    function getText(key, fallback = '') {
+        const lang = document.querySelector('.lang-button.active')?.dataset.lang || 'en';
+        const defaultLang = 'en';
+        return translations[lang]?.[key] || translations[defaultLang]?.[key] || fallback;
+    }
+
+    function changeLanguage(lang) {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('.lang-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-button[data-lang="${lang}"]`).classList.add('active');
+
+        document.querySelectorAll('[data-translate-key]').forEach(el => {
+            const key = el.dataset.translateKey;
+            el.innerHTML = getText(key, el.innerHTML);
+        });
+        
+        if (!listView.classList.contains('hidden')) {
+            const currentType = listView.dataset.type;
+            const currentCategory = listView.dataset.category;
+            const data = currentType === 'food' ? foodData[currentCategory] : shopData[currentCategory];
+            const categoryKey = currentCategory.replace(/-/g, '_');
+            const titleKey = `${currentType}_cat_${categoryKey}_title`;
+            showListView(data, titleKey);
+        }
+    }
+    
+    document.querySelectorAll('.lang-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            changeLanguage(e.currentTarget.dataset.lang);
+        });
+    });
+    
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const type = card.dataset.type;
+            const category = card.dataset.category;
+            
+            const data = type === 'food' ? foodData[category] : shopData[category];
+            const categoryKey = category.replace(/-/g, '_'); 
+            const titleKey = `${type}_cat_${categoryKey}_title`;
+            
+            listView.dataset.type = type;
+            listView.dataset.category = category; 
+            
+            showListView(data, titleKey);
+        });
+    });
+
+    changeLanguage('en');
+});
+</script>
+
+</body>
+</html>
+�

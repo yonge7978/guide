@@ -348,7 +348,16 @@ document.addEventListener('DOMContentLoaded', () => {
                  </button>
                  <div class="location-content-grid hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
                     ${groupedByLocation[location].map(item => {
-                        const itemName = item.name?.[lang] || item.name?.['en'] || item.id;
+                        const englishName = item.name?.['en'] || item.id;
+                        const localizedName = item.name?.[lang] || englishName;
+                        let itemName;
+
+                        if (lang === 'en' || englishName === localizedName) {
+                            itemName = englishName;
+                        } else {
+                            itemName = `${englishName} (${localizedName})`;
+                        }
+                        
                         const itemMenu = item.menu?.[lang] || item.menu?.['en'] || 'Menu info not available';
                         return `
                         <a href="${item.url}" target="_blank" class="block bouncy-card bg-white rounded-2xl shadow-lg overflow-hidden p-4 text-left">
@@ -448,4 +457,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
-�
